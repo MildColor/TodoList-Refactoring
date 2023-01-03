@@ -49,7 +49,6 @@ function SignUpForm() {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(inputValues);
     if (
       !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/i.test(
         inputValues.email.trim()

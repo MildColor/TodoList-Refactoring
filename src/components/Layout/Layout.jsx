@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Header from "../Header/Header";
 
 function Layout(props) {
   return (
@@ -12,7 +13,7 @@ function Layout(props) {
 export default Layout;
 
 const StLayout = styled.div`
-  background-color: #fdfcff;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;

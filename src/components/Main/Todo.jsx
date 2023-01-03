@@ -132,7 +132,7 @@ export default Todo;
 
 const StTodoDiv = styled.div`
   display: flex;
-  width: 500px;
+  width: 450px;
   height: 100px;
   align-items: center;
   border: 1px solid black;
@@ -140,7 +140,7 @@ const StTodoDiv = styled.div`
   margin: 10px 0;
 `;
 const TextBox = styled.div`
-  width: 400px;
+  width: 380px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -161,6 +161,6 @@ const TextBox = styled.div`
 const BtnBox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100px;
+  width: 70px;
   right: 0;
 `;

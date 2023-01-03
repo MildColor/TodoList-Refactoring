@@ -28,7 +28,6 @@ function TodoList() {
     }
   );
 
-  console.log(getTodosData);
   return (
     <TodoListSection>
       {getTodosData?.data?.map((todo) => {
@@ -43,5 +42,6 @@ export default TodoList;
 const TodoListSection = styled.section`
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  justify-content: center;
+  /* overflow-y: scroll; */
 `;
