@@ -28,7 +28,9 @@ function SignUpForm() {
           data.data.token !== undefined &&
           data.data.token !== null
         ) {
+          console.log(data);
           localStorage.setItem("token", data.data.token);
+          localStorage.setItem("userId", inputValues.email);
           alert(data.data.message);
           navigate("/auth/login");
         }

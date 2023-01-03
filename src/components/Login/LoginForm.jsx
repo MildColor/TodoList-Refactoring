@@ -10,7 +10,7 @@ function LoginForm() {
   useEffect(() => {
     const token = getAccessToken();
     if (token !== undefined && token !== null && token) {
-      return navigate(`/todolist`);
+      return navigate(`/`);
     }
   }, []);
 
@@ -38,8 +38,9 @@ function LoginForm() {
           data.data.token !== null
         ) {
           localStorage.setItem("token", data.data.token);
+          localStorage.setItem("userId", inputValues.email);
           alert(data.data.message);
-          navigate("/todolist");
+          navigate("/");
         }
       },
       onError: (error) => {
