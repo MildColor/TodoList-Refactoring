@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/Layout/Layout";
 import LoginForm from "../components/Login/LoginForm";
 
-function Login() {
+function SignIn() {
   return (
     <Layout>
       <LoginForm />
@@ -10,4 +10,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignIn;

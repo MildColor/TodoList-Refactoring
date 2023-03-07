@@ -7,7 +7,7 @@ import CreateTodoForm from "../components/Main/CreateTodoForm";
 import TodoList from "../components/Main/TodoList";
 import { getAccessToken } from "../utils";
 
-function Main() {
+function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function Main() {
   );
 }
 
-export default Main;
+export default Home;
 
 const Container = styled.section`
   display: flex;
