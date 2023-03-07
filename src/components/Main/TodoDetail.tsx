@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { todosApis } from "../../api/axiosConfig";
+import { todosApis } from "../../api/todo";
 import { Todo, TodoInput } from "../../types/todos";
 
 function TodoDetail({ todo }: { todo: Todo }) {

@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import styled from "styled-components";
-import { todosApis } from "../../api/axiosConfig";
+import { todosApis } from "../../api/todo";
 import { Todo, TodosReadSuccess } from "../../types/todos";
 import { getUserId } from "../../utils";
 import TodoDetail from "./TodoDetail";
