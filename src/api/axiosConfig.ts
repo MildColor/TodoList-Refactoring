@@ -13,7 +13,7 @@ const config = {
   },
 };
 
-const api = axios.create(config);
+export const api = axios.create(config);
 
 api.interceptors.request.use(function (config) {
   const accessToken = getAccessToken();
@@ -22,15 +22,6 @@ api.interceptors.request.use(function (config) {
   config.headers = { Authorization: accessToken };
   return config;
 });
-
-export const memberApis = {
-  // 회원가입
-  signUp: async (payload: SignUpForm) =>
-    await api.post(`users/create`, payload),
-
-  // 로그인
-  login: async (payload: SignInForm) => await api.post(`users/login`, payload),
-};
 
 export const todosApis = {
   getTodos: async () => await api.get(`/todos`),

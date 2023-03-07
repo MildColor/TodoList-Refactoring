@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { memberApis } from "../../api/axiosConfig";
+import { authApis } from "../../api/auth";
 import { SignInForm } from "../../types/signIn";
 import { getAccessToken } from "../../utils";
 
@@ -17,11 +17,10 @@ function LoginForm() {
 
   const [inputValues, setInputValues] = useState({ email: "", password: "" });
 
-  // // Login
   const { mutate: loginSubmitMutate } = useMutation(
     async (values: SignInForm) => {
       try {
-        const response = await memberApis.login(values);
+        const response = await authApis.signIn(values);
         return response;
       } catch (error) {
         // const { status, data } = error.response;

@@ -1,7 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import React, { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { memberApis } from "../../api/axiosConfig";
 import { Todo, TodosReadSuccess } from "../../types/todos";
 
 function SignUpForm() {
@@ -13,7 +12,7 @@ function SignUpForm() {
   const { mutate: signUpSubmitMutate } = useMutation<TodosReadSuccess>(
     // async (values) => {
     //   try {
-    //     const response = await memberApis.signUp(values);
+    //     const response = await authApis.signUp(values);
     //     return response;
     //   } catch (error) {
     // const { status, data } = error.response;
