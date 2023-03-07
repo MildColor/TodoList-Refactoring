@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import React, { useState } from "react";
-import { todosApis } from "../../api/axiosConfig";
+import { todosApis } from "../../api/todo";
 
 function CreateTodoForm() {
   const [inputValues, setInputValues] = useState({ title: "", content: "" });
