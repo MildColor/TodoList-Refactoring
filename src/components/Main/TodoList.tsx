@@ -2,8 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import styled from "styled-components";
 import { todosApis } from "../../api/axiosConfig";
+import { Todo, TodosReadSuccess } from "../../types/todos";
 import { getUserId } from "../../utils";
-import Todo from "./Todo";
+import TodoDetail from "./TodoDetail";
 
 function TodoList() {
   const userId = getUserId();
@@ -12,7 +13,7 @@ function TodoList() {
     data: getTodosData,
     isLoading,
     error,
-  } = useQuery(
+  } = useQuery<TodosReadSuccess>(
     ["getTodosData"],
     async () => {
       try {
@@ -30,8 +31,8 @@ function TodoList() {
 
   return (
     <TodoListSection>
-      {getTodosData?.data?.map((todo) => {
-        return <Todo key={todo.id} todo={todo} />;
+      {getTodosData?.data?.map((todo: Todo) => {
+        return <TodoDetail key={todo.id} todo={todo} />;
       })}
     </TodoListSection>
   );

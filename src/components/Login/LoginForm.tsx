@@ -1,7 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { memberApis } from "../../api/axiosConfig";
+import { SignInForm } from "../../types/signIn";
 import { getAccessToken } from "../../utils";
 
 function LoginForm() {
@@ -18,30 +19,30 @@ function LoginForm() {
 
   // // Login
   const { mutate: loginSubmitMutate } = useMutation(
-    async (values) => {
+    async (values: SignInForm) => {
       try {
         const response = await memberApis.login(values);
         return response;
       } catch (error) {
-        const { status, data } = error.response;
-        if (status === 400) {
-          return alert(data.details);
-        }
+        // const { status, data } = error.response;
+        // if (status === 400) {
+        //   return alert(data.details);
+        // }
       }
     },
     {
       onSuccess: (data) => {
         console.log("success", data);
-        if (
-          data.status === 200 &&
-          data.data.token !== undefined &&
-          data.data.token !== null
-        ) {
-          localStorage.setItem("token", data.data.token);
-          localStorage.setItem("userId", inputValues.email);
-          alert(data.data.message);
-          navigate("/");
-        }
+        // if (
+        //   data.status === 200 &&
+        //   data.data.token !== undefined &&
+        //   data.data.token !== null
+        // ) {
+        //   localStorage.setItem("token", data.data.token);
+        //   localStorage.setItem("userId", inputValues.email);
+        //   alert(data.data.message);
+        //   navigate("/");
+        // }
       },
       onError: (error) => {
         throw error;
@@ -49,13 +50,13 @@ function LoginForm() {
     }
   );
 
-  const onChangeHandler = (e) => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     console.log(name, value);
     setInputValues({ ...inputValues, [name]: value });
   };
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(inputValues);
     if (

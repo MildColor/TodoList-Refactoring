@@ -24,13 +24,15 @@ function TodoDetail() {
     error,
   } = useQuery(
     ["getTodoById", id],
-    async ({ queryKey }) => {
+    async () => {
       try {
-        const response = await todosApis.getTodoById(queryKey[1]);
+        const response = await todosApis.getTodoById(id);
         return response;
       } catch (error) {
-        const { status, data } = error.response;
-        alert(data.details);
+        console.log(error);
+        // const { status, data } = error.response;
+        // alert(data.details);
+        alert("에러입니다.");
         navigate(-1);
       }
     },

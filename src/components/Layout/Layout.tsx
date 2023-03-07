@@ -1,11 +1,13 @@
-import React from "react";
 import styled from "styled-components";
-import Header from "../Header/Header";
 
-function Layout(props) {
+export interface LayoutProps {
+  children: React.ReactNode;
+}
+
+function Layout({ children }: LayoutProps) {
   return (
     <StLayout>
-      <StSection>{props.children}</StSection>
+      <StSection>{children}</StSection>
     </StLayout>
   );
 }

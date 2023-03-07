@@ -1,25 +1,26 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { todosApis } from "../../api/axiosConfig";
+import { Todo, TodoInput } from "../../types/todos";
 
-function Todo({ todo }) {
+function TodoDetail({ todo }: { todo: Todo }) {
   const queryClient = useQueryClient();
   const [isEdit, setIsEdit] = useState(false);
-  const [inputValues, setInputValues] = useState({
+  const [inputValues, setInputValues] = useState<TodoInput>({
     title: todo.title,
     content: todo.content,
   });
 
   //삭제
   const { mutate: deleteTodoMutate } = useMutation(
-    async (values) => {
+    async (values: string) => {
       try {
         const response = await todosApis.deleteTodo(values);
         return response;
       } catch (error) {
-        const { status, data } = error.response;
+        // const { status, data } = error.response;
       }
     },
     {
@@ -34,18 +35,18 @@ function Todo({ todo }) {
 
   //수정
   const { mutate: updateTodoMutate } = useMutation(
-    async (values) => {
+    async (values: Todo) => {
       try {
         const response = await todosApis.updateTodo(values);
         return response;
       } catch (error) {
-        const { status, data } = error.response;
+        // const { status, data } = error.response;
       }
     },
     {
       onSuccess: (data) => {
         //update후에 get 다시 실행
-        queryClient.invalidateQueries("getTodosData");
+        // queryClient.invalidateQueries("getTodosData");
       },
       onError: (error) => {
         throw error;
@@ -60,18 +61,18 @@ function Todo({ todo }) {
     }
   };
 
-  const onChangeHandler = (e) => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputValues({ ...inputValues, [name]: value });
   };
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const id = todo.id;
     if (inputValues.title.trim() === "" || inputValues.content.trim() === "") {
       return alert("빈칸을 채워주세요");
     }
-    updateTodoMutate({ inputValues, id });
+    updateTodoMutate({ ...inputValues, id });
     setIsEdit(false);
   };
 
@@ -128,7 +129,7 @@ function Todo({ todo }) {
   );
 }
 
-export default Todo;
+export default TodoDetail;
 
 const StTodoDiv = styled.div`
   display: flex;
