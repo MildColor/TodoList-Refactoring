@@ -1,45 +1,24 @@
-import { useMutation } from "@tanstack/react-query";
 import React, { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Todo, TodosReadSuccess } from "../../types/todos";
+import { PAGE_PATH } from "../../constants/path";
+import { useSignUpMutation } from "../../hooks/queries/auth/useSignUpMutation";
 
 function SignUpForm() {
   const navigate = useNavigate();
 
-  const [inputValues, setInputValues] = useState({ email: "", password: "" });
+  const [inputValues, setInputValues] = useState({
+    email: "",
+    password: "",
+  });
 
   // // signUp
-  const { mutate: signUpSubmitMutate } = useMutation<TodosReadSuccess>(
-    // async (values) => {
-    //   try {
-    //     const response = await authApis.signUp(values);
-    //     return response;
-    //   } catch (error) {
-    // const { status, data } = error.response;
-    // if (status === 409) {
-    //   return alert(data.details);
-    // }
-    //   }
-    // },
-    {
-      onSuccess: (data) => {
-        // if (
-        //   data.status === 200 &&
-        //   data.data.token !== undefined &&
-        //   data.data.token !== null
-        // ) {
-        //   console.log(data);
-        //   localStorage.setItem("token", data.data.token);
-        //   localStorage.setItem("userId", inputValues.email);
-        //   alert(data.data.message);
-        //   navigate("/auth/login");
-        // }
-      },
-      onError: (error) => {
-        throw error;
-      },
-    }
-  );
+  const { mutate } = useSignUpMutation();
+
+  const onChangehandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    setInputValues({ ...inputValues, [name]: value });
+  };
 
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,7 +31,7 @@ function SignUpForm() {
     } else if (inputValues.password.trim().length <= 8) {
       return alert("비밀번호는 8자 이상 입력해주세요.");
     }
-    // signUpSubmitMutate(inputValues);
+    mutate(inputValues);
   };
 
   return (
@@ -60,13 +39,20 @@ function SignUpForm() {
       <h1>회원가입</h1>
       <form onSubmit={onSubmitHandler}>
         <label htmlFor="email">이메일</label>
-        <input type="email" id="email" name="email" value={inputValues.email} />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={inputValues.email}
+          onChange={onChangehandler}
+        />
         <label htmlFor="password">패스워드</label>
         <input
           type="password"
           id="password"
           name="password"
           value={inputValues.password}
+          onChange={onChangehandler}
         />
         <button type="submit">회원가입</button>
       </form>

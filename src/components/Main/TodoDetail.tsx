@@ -1,58 +1,19 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { todosApis } from "../../api/todo";
+import { useDeleteTodoMutation } from "../../hooks/queries/todo/useDeleteTodoMutation";
+import { useUpdateTodoMutation } from "../../hooks/queries/todo/useUpdateTodoMutation";
 import { Todo, TodoInput } from "../../types/todos";
 
 function TodoDetail({ todo }: { todo: Todo }) {
-  const queryClient = useQueryClient();
   const [isEdit, setIsEdit] = useState(false);
   const [inputValues, setInputValues] = useState<TodoInput>({
     title: todo.title,
     content: todo.content,
   });
 
-  //삭제
-  const { mutate: deleteTodoMutate } = useMutation(
-    async (values: string) => {
-      try {
-        const response = await todosApis.deleteTodo(values);
-        return response;
-      } catch (error) {
-        // const { status, data } = error.response;
-      }
-    },
-    {
-      onSuccess: (data) => {
-        console.log("success", data);
-      },
-      onError: (error) => {
-        throw error;
-      },
-    }
-  );
-
-  //수정
-  const { mutate: updateTodoMutate } = useMutation(
-    async (values: Todo) => {
-      try {
-        const response = await todosApis.updateTodo(values);
-        return response;
-      } catch (error) {
-        // const { status, data } = error.response;
-      }
-    },
-    {
-      onSuccess: (data) => {
-        //update후에 get 다시 실행
-        // queryClient.invalidateQueries("getTodosData");
-      },
-      onError: (error) => {
-        throw error;
-      },
-    }
-  );
+  const { mutate: deleteTodoMutate } = useDeleteTodoMutation();
+  const { mutate: updateTodoMutate } = useUpdateTodoMutation();
 
   const deleteHandler = () => {
     const confirm = window.confirm("정말삭제하시겠습니까?");

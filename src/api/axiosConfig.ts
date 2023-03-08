@@ -3,6 +3,7 @@ import { SignInForm } from "../types/signIn";
 import { SignUpForm } from "../types/signUp";
 import { Todo, TodoInput } from "../types/todos";
 import { getAccessToken } from "../utils";
+import { getLocalStorage } from "../utils/localStorage";
 
 const config = {
   baseURL: process.env.REACT_APP_BASE_URL,
@@ -16,7 +17,7 @@ const config = {
 export const api = axios.create(config);
 
 api.interceptors.request.use(function (config) {
-  const accessToken = getAccessToken();
+  const accessToken = getLocalStorage("accessToken");
   if (!accessToken) return config;
 
   config.headers = { Authorization: accessToken };

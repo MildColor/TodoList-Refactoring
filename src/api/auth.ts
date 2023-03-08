@@ -3,9 +3,10 @@ import { SignUpForm } from "../types/signUp";
 import { api } from "./axiosConfig";
 
 export const authApis = {
-  signUp: async (payload: SignUpForm) =>
-    await api.post(`users/create`, payload),
+  signUp: async ({ email, password }: SignUpForm) =>
+    await api.post(`users/create`, { email, password }),
 
   // 로그인
-  signIn: async (payload: SignInForm) => await api.post(`users/login`, payload),
+  signIn: async ({ email, password }: SignInForm) =>
+    await api.post(`users/login`, { email, password }),
 };

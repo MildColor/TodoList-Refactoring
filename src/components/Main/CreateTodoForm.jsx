@@ -1,31 +1,12 @@
 import { useMutation } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { todosApis } from "../../api/todo";
+import { usePostTodoMutation } from "../../hooks/queries/todo/usePostTodoMutation";
 
 function CreateTodoForm() {
   const [inputValues, setInputValues] = useState({ title: "", content: "" });
 
-  const { mutate: createTodoSubmitMutate } = useMutation(
-    async (values) => {
-      try {
-        const response = await todosApis.createTodo(values);
-        return response;
-      } catch (error) {
-        const { status, data } = error.response;
-        return alert(data.details);
-      }
-    },
-    {
-      onSuccess: (data) => {
-        if (data.status === 200 && data.data) {
-          alert("Todo가 작성되었습니다");
-        }
-      },
-      onError: (error) => {
-        throw error;
-      },
-    }
-  );
+  const { mutate } = usePostTodoMutation();
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
@@ -37,7 +18,7 @@ function CreateTodoForm() {
     if (inputValues.title.trim() === "" || inputValues.content.trim() === "") {
       return alert("빈칸을 채워주세요");
     }
-    createTodoSubmitMutate(inputValues);
+    mutate(inputValues);
     setInputValues({ ...inputValues, title: "", content: "" });
   };
 

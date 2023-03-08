@@ -1,37 +1,16 @@
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import styled from "styled-components";
-import { todosApis } from "../../api/todo";
-import { Todo, TodosReadSuccess } from "../../types/todos";
+import { useGetTodos } from "../../hooks/queries/todo/useGetTodos";
+import { Todo } from "../../types/todos";
 import { getUserId } from "../../utils";
 import TodoDetail from "./TodoDetail";
 
 function TodoList() {
-  const userId = getUserId();
-
-  const {
-    data: getTodosData,
-    isLoading,
-    error,
-  } = useQuery<TodosReadSuccess>(
-    ["getTodosData"],
-    async () => {
-      try {
-        const { data } = await todosApis.getTodos();
-        return data;
-      } catch (error) {}
-    },
-    {
-      onSuccess: (data) => {},
-      onError: (error) => {
-        throw error;
-      },
-    }
-  );
+  const { data: getTodosDatas } = useGetTodos();
 
   return (
     <TodoListSection>
-      {getTodosData?.data?.map((todo: Todo) => {
+      {getTodosDatas?.data?.data.map((todo: Todo) => {
         return <TodoDetail key={todo.id} todo={todo} />;
       })}
     </TodoListSection>

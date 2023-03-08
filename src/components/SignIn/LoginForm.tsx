@@ -2,52 +2,22 @@ import { useMutation } from "@tanstack/react-query";
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { authApis } from "../../api/auth";
+import { useSignInMutation } from "../../hooks/queries/auth/useSignInMutation";
 import { SignInForm } from "../../types/signIn";
 import { getAccessToken } from "../../utils";
 
 function LoginForm() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = getAccessToken();
-    if (token !== undefined && token !== null && token) {
-      return navigate(`/`);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const token = getAccessToken();
+  //   if (token !== undefined && token !== null && token) {
+  //     return navigate(`/`);
+  //   }
+  // }, []);
 
   const [inputValues, setInputValues] = useState({ email: "", password: "" });
-
-  const { mutate: loginSubmitMutate } = useMutation(
-    async (values: SignInForm) => {
-      try {
-        const response = await authApis.signIn(values);
-        return response;
-      } catch (error) {
-        // const { status, data } = error.response;
-        // if (status === 400) {
-        //   return alert(data.details);
-        // }
-      }
-    },
-    {
-      onSuccess: (data) => {
-        console.log("success", data);
-        // if (
-        //   data.status === 200 &&
-        //   data.data.token !== undefined &&
-        //   data.data.token !== null
-        // ) {
-        //   localStorage.setItem("token", data.data.token);
-        //   localStorage.setItem("userId", inputValues.email);
-        //   alert(data.data.message);
-        //   navigate("/");
-        // }
-      },
-      onError: (error) => {
-        throw error;
-      },
-    }
-  );
+  const { mutate } = useSignInMutation();
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -58,6 +28,7 @@ function LoginForm() {
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(inputValues);
+    console.log(e.target);
     if (
       !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/i.test(
         inputValues.email.trim()
@@ -67,7 +38,7 @@ function LoginForm() {
     } else if (inputValues.password.trim().length <= 8) {
       return alert("비밀번호는 8자 이상 입력해주세요.");
     }
-    loginSubmitMutate(inputValues);
+    mutate(inputValues);
   };
 
   return (
@@ -97,3 +68,35 @@ function LoginForm() {
 }
 
 export default LoginForm;
+
+// const { mutate: loginSubmitMutate } = useMutation(
+//   async (values: SignInForm) => {
+//     try {
+//       const response = await authApis.signIn(values);
+//       return response;
+//     } catch (error) {
+//       // const { status, data } = error.response;
+//       // if (status === 400) {
+//       //   return alert(data.details);
+//       // }
+//     }
+//   },
+//   {
+//     onSuccess: (data) => {
+//       console.log("success", data);
+//       // if (
+//       //   data.status === 200 &&
+//       //   data.data.token !== undefined &&
+//       //   data.data.token !== null
+//       // ) {
+//       //   localStorage.setItem("token", data.data.token);
+//       //   localStorage.setItem("userId", inputValues.email);
+//       //   alert(data.data.message);
+//       //   navigate("/");
+//       // }
+//     },
+//     onError: (error) => {
+//       throw error;
+//     },
+//   }
+// );
