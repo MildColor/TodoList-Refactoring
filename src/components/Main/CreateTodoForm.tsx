@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { todosApis } from "../../api/todo";
 import { usePostTodoMutation } from "../../hooks/queries/todo/usePostTodoMutation";
 
@@ -8,12 +8,12 @@ function CreateTodoForm() {
 
   const { mutate } = usePostTodoMutation();
 
-  const onChangeHandler = (e) => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputValues({ ...inputValues, [name]: value });
   };
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (inputValues.title.trim() === "" || inputValues.content.trim() === "") {
       return alert("빈칸을 채워주세요");

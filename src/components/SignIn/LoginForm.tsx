@@ -7,15 +7,6 @@ import { SignInForm } from "../../types/signIn";
 import { getAccessToken } from "../../utils";
 
 function LoginForm() {
-  const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   const token = getAccessToken();
-  //   if (token !== undefined && token !== null && token) {
-  //     return navigate(`/`);
-  //   }
-  // }, []);
-
   const [inputValues, setInputValues] = useState({ email: "", password: "" });
   const { mutate } = useSignInMutation();
 

@@ -5,44 +5,13 @@ import styled from "styled-components";
 import { todosApis } from "../api/todo";
 import Header from "../components/Header/Header";
 import Layout from "../components/Layout/Layout";
-import { getAccessToken } from "../utils";
+import { useGetTodoById } from "../hooks/queries/todo/useGetTodoById";
 
 function TodoDetail() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  useEffect(() => {
-    const token = getAccessToken();
-    if (token === undefined || token === null || token === "") {
-      return navigate(`/auth/login`);
-    }
-  }, []);
-
-  const {
-    data: getTodoByIdData,
-    isLoading,
-    error,
-  } = useQuery(
-    ["getTodoById", id],
-    async () => {
-      try {
-        const response = await todosApis.getTodoById(id);
-        return response;
-      } catch (error) {
-        console.log(error);
-        // const { status, data } = error.response;
-        // alert(data.details);
-        alert("에러입니다.");
-        navigate(-1);
-      }
-    },
-    {
-      onSuccess: (data) => {},
-      onError: (error) => {
-        throw error;
-      },
-    }
-  );
+  const { data: getTodoByIdData } = useGetTodoById(id);
 
   return (
     <Layout>

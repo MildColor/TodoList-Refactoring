@@ -1,15 +1,16 @@
-import { useMutation } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { todosApis } from "../../../api/todo";
-import { Todo } from "../../../types/todos";
+import { Todo, TodoInput } from "../../../types/todos";
 
 export const usePostTodoMutation = () => {
+  const queryClient = useQueryClient();
+
   return useMutation({
-    mutationFn: async (payload: Todo) => {
+    mutationFn: async (payload: TodoInput) => {
       return await todosApis.createTodo(payload);
     },
     onSuccess: (data, variables, context) => {
-      console.log(data);
+      queryClient.invalidateQueries({ queryKey: ["getTodos"] });
     },
     onError: (e) => {
       console.log(e);

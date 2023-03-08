@@ -1,4 +1,4 @@
-import { Todo } from "../types/todos";
+import { Todo, TodoInput } from "../types/todos";
 import { api } from "./axiosConfig";
 
 export const todosApis = {
@@ -7,7 +7,7 @@ export const todosApis = {
   getTodoById: async (payload: string | undefined) =>
     await api.get(`/todos/${payload}`),
 
-  createTodo: async (payload: Todo) => await api.post(`/todos`, payload),
+  createTodo: async (payload: TodoInput) => await api.post(`/todos`, payload),
 
   deleteTodo: async (payload: string) => await api.delete(`/todos/${payload}`),
 
