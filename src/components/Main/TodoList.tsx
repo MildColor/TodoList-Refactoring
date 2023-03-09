@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { useGetTodos } from "../../hooks/queries/todo/useGetTodos";
 import { Todo } from "../../types/todos";
-import { getUserId } from "../../utils";
 import TodoDetail from "./TodoDetail";
 
 function TodoList() {

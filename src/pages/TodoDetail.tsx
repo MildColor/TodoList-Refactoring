@@ -1,8 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
-import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import { todosApis } from "../api/todo";
 import Header from "../components/Header/Header";
 import Layout from "../components/Layout/Layout";
 import { useGetTodoById } from "../hooks/queries/todo/useGetTodoById";

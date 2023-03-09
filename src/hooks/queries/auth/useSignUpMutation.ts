@@ -13,7 +13,7 @@ export const useSignUpMutation = () => {
       return await authApis.signUp(payload);
     },
     onSuccess: (data, variables, context) => {
-      const { token, message } = data.data;
+      const { token } = data.data;
       setLocalStorage("accessToken", token);
       navigate(PAGE_PATH.HOME);
     },

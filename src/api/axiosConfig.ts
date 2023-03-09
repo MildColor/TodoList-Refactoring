@@ -1,8 +1,4 @@
 import axios from "axios";
-import { SignInForm } from "../types/signIn";
-import { SignUpForm } from "../types/signUp";
-import { Todo, TodoInput } from "../types/todos";
-import { getAccessToken } from "../utils";
 import { getLocalStorage } from "../utils/localStorage";
 
 const config = {

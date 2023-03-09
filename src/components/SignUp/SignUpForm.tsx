@@ -1,11 +1,7 @@
 import React, { FormEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { PAGE_PATH } from "../../constants/path";
 import { useSignUpMutation } from "../../hooks/queries/auth/useSignUpMutation";
 
 function SignUpForm() {
-  const navigate = useNavigate();
-
   const [inputValues, setInputValues] = useState({
     email: "",
     password: "",
