@@ -6,8 +6,6 @@ function SignUpForm() {
     email: "",
     password: "",
   });
-
-  // // signUp
   const { mutate } = useSignUpMutation();
 
   const onChangehandler = (e: React.ChangeEvent<HTMLInputElement>) => {

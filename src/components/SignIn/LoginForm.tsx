@@ -13,17 +13,7 @@ function LoginForm() {
 
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(inputValues);
-    console.log(e.target);
-    if (
-      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/i.test(
-        inputValues.email.trim()
-      )
-    ) {
-      return alert("이메일 형식에 맞지 않습니다.");
-    } else if (inputValues.password.trim().length <= 8) {
-      return alert("비밀번호는 8자 이상 입력해주세요.");
-    }
+
     mutate(inputValues);
   };
 
