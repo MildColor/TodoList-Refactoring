@@ -3,4 +3,5 @@ export const PAGE_PATH = {
   SIGN_IN: "/auth/signin",
   SIGN_UP: "/auth/signup",
   TODO_DETAIL: (id: string) => `/todo/${id}`,
+  NOT_FOUND: "*",
 };

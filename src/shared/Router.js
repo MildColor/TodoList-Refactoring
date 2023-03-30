@@ -6,6 +6,7 @@ import SignUp from "../pages/SignUp";
 import TodoDetail from "../pages/TodoDetail";
 import { PAGE_PATH } from "../constants/path";
 import AuthHOC from "../components/HOC/AuthHOC";
+import NotFound from "../pages/NotFound";
 
 function Router() {
   const AuthHome = AuthHOC(Home);
@@ -14,6 +15,7 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path={PAGE_PATH.NOT_FOUND} element={<NotFound />} />
         <Route path={PAGE_PATH.HOME} element={<AuthHome />} />
         <Route path={PAGE_PATH.SIGN_IN} element={<SignIn />} />
         <Route path={PAGE_PATH.SIGN_UP} element={<SignUp />} />

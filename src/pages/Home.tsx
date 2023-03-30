@@ -5,7 +5,6 @@ import CreateTodoForm from "../components/Main/CreateTodoForm";
 import TodoList from "../components/Main/TodoList";
 
 function Home() {
-  console.log(Header);
   return (
     <Layout>
       <Container>
