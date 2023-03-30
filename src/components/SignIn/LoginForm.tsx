@@ -1,20 +1,18 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent } from "react";
+import useForm from "../../hooks/common/useForm";
 import { useSignInMutation } from "../../hooks/queries/auth/useSignInMutation";
 
 function LoginForm() {
-  const [inputValues, setInputValues] = useState({ email: "", password: "" });
-  const { mutate } = useSignInMutation();
+  const [{ email, password }, onChange] = useForm({
+    email: "",
+    password: "",
+  });
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    console.log(name, value);
-    setInputValues({ ...inputValues, [name]: value });
-  };
+  const { mutate } = useSignInMutation();
 
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    mutate(inputValues);
+    mutate({ email, password });
   };
 
   return (
@@ -26,16 +24,18 @@ function LoginForm() {
           type="email"
           id="email"
           name="email"
-          value={inputValues.email}
-          onChange={onChangeHandler}
+          value={email}
+          onChange={onChange}
+          autoComplete="on"
         />
         <label htmlFor="password">패스워드</label>
         <input
           type="password"
           id="password"
           name="password"
-          value={inputValues.password}
-          onChange={onChangeHandler}
+          value={password}
+          onChange={onChange}
+          autoComplete="on"
         />
         <button type="submit">로그인하기</button>
       </form>

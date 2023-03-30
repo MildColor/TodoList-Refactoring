@@ -24,4 +24,5 @@ const Container = styled.section`
   flex-direction: column;
   width: 550px;
   height: 800px;
+  padding-top: 100px;
 `;

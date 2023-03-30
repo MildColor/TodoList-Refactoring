@@ -27,6 +27,5 @@ const StSection = styled.section`
   width: 1280px;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 100%;
 `;
