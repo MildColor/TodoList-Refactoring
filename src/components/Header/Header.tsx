@@ -1,14 +1,15 @@
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { PAGE_PATH } from "../../constants/path";
 
 function Header() {
   const navigate = useNavigate();
 
   const logoutHandler = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("accessToken");
     localStorage.removeItem("userId");
-    navigate("/auth/login");
+    navigate(PAGE_PATH.SIGN_IN);
   };
 
   return (
