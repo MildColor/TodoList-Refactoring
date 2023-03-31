@@ -1,13 +1,17 @@
 import React, { FormEvent } from "react";
 import useForm from "../../hooks/common/useForm";
 import { useSignInMutation } from "../../hooks/queries/auth/useSignInMutation";
+import useError from "../../hooks/common/useError";
 
 function LoginForm() {
   const [{ email, password }, onChange] = useForm({
     email: "",
     password: "",
   });
-
+  const [errorMessage, setErrorMessage] = useError({
+    email: "",
+    password: "",
+  });
   const { mutate } = useSignInMutation();
 
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
