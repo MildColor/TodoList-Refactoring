@@ -37,7 +37,6 @@ function SignUpForm() {
     e.preventDefault();
 
     formValidator() ?? mutate({ email, password });
-    console.log(errorMessage);
   };
 
   return (

@@ -48,35 +48,3 @@ function LoginForm() {
 }
 
 export default LoginForm;
-
-// const { mutate: loginSubmitMutate } = useMutation(
-//   async (values: SignInForm) => {
-//     try {
-//       const response = await authApis.signIn(values);
-//       return response;
-//     } catch (error) {
-//       // const { status, data } = error.response;
-//       // if (status === 400) {
-//       //   return alert(data.details);
-//       // }
-//     }
-//   },
-//   {
-//     onSuccess: (data) => {
-//       console.log("success", data);
-//       // if (
-//       //   data.status === 200 &&
-//       //   data.data.token !== undefined &&
-//       //   data.data.token !== null
-//       // ) {
-//       //   localStorage.setItem("token", data.data.token);
-//       //   localStorage.setItem("userId", inputValues.email);
-//       //   alert(data.data.message);
-//       //   navigate("/");
-//       // }
-//     },
-//     onError: (error) => {
-//       throw error;
-//     },
-//   }
-// );
