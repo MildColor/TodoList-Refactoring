@@ -6,7 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallback from "./components/Exception/ErrorPage";
 import LoadingFallback from "./components/Loader/Loader";
-import { error } from "console";
+import GlobalStyle from "./styles/globalStyle";
+import { Reset } from "styled-reset";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,6 +24,8 @@ const root = ReactDOM.createRoot(
 root.render(
   // <React.StrictMode>
   <QueryClientProvider client={queryClient}>
+    <Reset />
+    <GlobalStyle />
     <ErrorBoundary fallback={<ErrorFallback />}>
       <Suspense fallback={<LoadingFallback />}>
         <App />
