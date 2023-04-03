@@ -20,6 +20,10 @@ export const animation = {
   `,
 } as const;
 
+export type ColorTypes = typeof colors;
+export type GradientsTypes = typeof gradients;
+export type AnimationTypes = typeof animation;
+
 const theme: DefaultTheme = { colors, gradients, animation };
 
 export default theme;
