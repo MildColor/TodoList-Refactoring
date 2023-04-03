@@ -4,10 +4,13 @@ import "./index.css";
 import App from "./App";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
-import ErrorFallback from "./components/Exception/ErrorPage";
-import LoadingFallback from "./components/Loader/Loader";
+import ErrorPage from "./components/Exception/ErrorPage";
+import Loader from "./components/Loader/Loader";
 import GlobalStyle from "./styles/globalStyle";
 import { Reset } from "styled-reset";
+import { ThemeProvider } from "styled-components";
+import theme from "./styles/theme";
+import Layout from "./components/Layout/Layout";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,13 +27,17 @@ const root = ReactDOM.createRoot(
 root.render(
   // <React.StrictMode>
   <QueryClientProvider client={queryClient}>
-    <Reset />
-    <GlobalStyle />
-    <ErrorBoundary fallback={<ErrorFallback />}>
-      <Suspense fallback={<LoadingFallback />}>
-        <App />
-      </Suspense>
-    </ErrorBoundary>
+    <ThemeProvider theme={theme}>
+      <Reset />
+      <GlobalStyle />
+      <Layout>
+        <ErrorBoundary fallback={<ErrorPage />}>
+          <Suspense fallback={<Loader />}>
+            <App />
+          </Suspense>
+        </ErrorBoundary>
+      </Layout>
+    </ThemeProvider>
   </QueryClientProvider>
   // </React.StrictMode>
 );

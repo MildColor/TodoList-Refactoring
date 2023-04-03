@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../components/Header/Header";
-import Layout from "../components/Layout/Layout";
 import { useGetTodoById } from "../hooks/queries/todo/useGetTodoById";
 
 function TodoDetail() {
@@ -11,18 +10,16 @@ function TodoDetail() {
   const { data: getTodoByIdData } = useGetTodoById(id);
 
   return (
-    <Layout>
-      <Container>
-        <Header />
-        <StDiv>
-          <h3>Title: {getTodoByIdData?.data?.data.title}</h3>
-          <p>Content: {getTodoByIdData?.data?.data.content}</p>
-          <p>createdAt: {getTodoByIdData?.data?.data.createdAt}</p>
-          <p>updatedAt: {getTodoByIdData?.data?.data.updatedAt}</p>
-        </StDiv>
-        <button onClick={() => navigate(-1)}>뒤로가기</button>
-      </Container>
-    </Layout>
+    <Container>
+      <Header />
+      <StDiv>
+        <h3>Title: {getTodoByIdData?.data?.data.title}</h3>
+        <p>Content: {getTodoByIdData?.data?.data.content}</p>
+        <p>createdAt: {getTodoByIdData?.data?.data.createdAt}</p>
+        <p>updatedAt: {getTodoByIdData?.data?.data.updatedAt}</p>
+      </StDiv>
+      <button onClick={() => navigate(-1)}>뒤로가기</button>
+    </Container>
   );
 }
 

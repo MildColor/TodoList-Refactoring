@@ -15,11 +15,11 @@ function Layout({ children }: LayoutProps) {
 export default Layout;
 
 const StLayout = styled.div`
-  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-image: ${({ theme }) => theme.gradients.AmyCrisp};
 `;
 
 const StSection = styled.section`

@@ -24,7 +24,8 @@ export default Header;
 const ContainerDiv = styled.div`
   display: flex;
   width: 100%;
-  background-color: pink;
+  height: 100px;
+  background-image: ${({ theme }) => theme.gradients.RainyAshville};
   justify-content: flex-end;
 
   button {
@@ -33,3 +34,5 @@ const ContainerDiv = styled.div`
     cursor: pointer;
   }
 `;
+
+// background-color: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%)

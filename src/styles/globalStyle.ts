@@ -12,6 +12,11 @@ const GlobalStyle = createGlobalStyle`
     *{
         box-sizing: border-box;
         font-family: "Pretendard-Regular", sans-serif;
+    }  
+    
+    body{
+        box-sizing: border-box;
+        font-family: "Pretendard-Regular", sans-serif;
     }
 
     button{
@@ -19,11 +24,6 @@ const GlobalStyle = createGlobalStyle`
         background: none;
         padding: 0;
         cursor: pointer;
-    }
-
-    body{
-        box-sizing: border-box;
-        font-family: "Pretendard-Regular", sans-serif;
     }
  
     a{
