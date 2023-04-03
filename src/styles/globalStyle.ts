@@ -8,16 +8,19 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 400;
         font-style: normal;
     }
+
     *{
         box-sizing: border-box;
         font-family: "Pretendard-Regular", sans-serif;
     }
-    button {
-      border: none;
-      background: none;
-      padding: 0;
-      cursor: pointer;
+
+    button{
+        border: none;
+        background: none;
+        padding: 0;
+        cursor: pointer;
     }
+
     body{
         box-sizing: border-box;
         font-family: "Pretendard-Regular", sans-serif;
