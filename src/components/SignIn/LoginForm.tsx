@@ -2,8 +2,12 @@ import React, { FormEvent } from "react";
 import useForm from "../../hooks/common/useForm";
 import { useSignInMutation } from "../../hooks/queries/auth/useSignInMutation";
 import useError from "../../hooks/common/useError";
+import Button from "../common/Button/Button";
+import { useNavigate } from "react-router-dom";
+import { PAGE_PATH } from "../../constants/path";
 
 function LoginForm() {
+  const navigate = useNavigate();
   const [{ email, password }, onChange] = useForm({
     email: "",
     password: "",
@@ -17,6 +21,10 @@ function LoginForm() {
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     mutate({ email, password });
+  };
+
+  const goToSignUp = () => {
+    navigate(PAGE_PATH.SIGN_UP);
   };
 
   return (
@@ -41,7 +49,10 @@ function LoginForm() {
           onChange={onChange}
           autoComplete="on"
         />
-        <button type="submit">로그인하기</button>
+        <Button type="submit">로그인하기</Button>
+        <Button type="button" onClick={() => goToSignUp()}>
+          회원가입
+        </Button>
       </form>
     </div>
   );

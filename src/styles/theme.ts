@@ -1,6 +1,15 @@
 import { DefaultTheme, css } from "styled-components";
 
-export const colors = {} as const;
+export const colors = {
+  RainyAshville: {
+    0: "#fbc2eb",
+    1: "#a6c1ee",
+  },
+  AmyCrisp: {
+    0: "#a6c0fe",
+    1: "#f68084",
+  },
+} as const;
 
 export const gradients = {
   RainyAshville: "linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%)",

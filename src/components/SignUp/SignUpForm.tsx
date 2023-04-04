@@ -30,13 +30,13 @@ function SignUpForm() {
       "password",
       isPasswordValidity ? "비밀번호는 8자 이상 입력해주세요" : ""
     );
+
     return ![isEmailValidity, isPasswordValidity].includes(true);
   };
 
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    formValidator() ?? mutate({ email, password });
+    formValidator() && mutate({ email, password });
   };
 
   return (

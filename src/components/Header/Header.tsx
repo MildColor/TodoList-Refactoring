@@ -2,13 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { PAGE_PATH } from "../../constants/path";
+import { removeLocalStorage } from "../../utils/localStorage";
 
 function Header() {
   const navigate = useNavigate();
 
   const logoutHandler = () => {
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("userId");
+    removeLocalStorage("accessToken");
+    removeLocalStorage("userId");
     navigate(PAGE_PATH.SIGN_IN);
   };
 
