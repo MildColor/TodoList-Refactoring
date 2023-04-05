@@ -1,3 +1,4 @@
+"use client";
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -31,7 +32,7 @@ root.render(
       <Reset />
       <GlobalStyle />
       <Layout>
-        <ErrorBoundary fallback={<ErrorPage />}>
+        <ErrorBoundary FallbackComponent={ErrorPage}>
           <Suspense fallback={<Loader />}>
             <App />
           </Suspense>
