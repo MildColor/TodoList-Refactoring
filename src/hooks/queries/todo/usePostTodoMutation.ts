@@ -12,8 +12,8 @@ export const usePostTodoMutation = () => {
     onSuccess: (data, variables, context) => {
       queryClient.invalidateQueries({ queryKey: ["getTodos"] });
     },
-    onError: (e) => {
-      console.log(e);
+    onError: (error) => {
+      // console.log(e);
     },
   });
 };

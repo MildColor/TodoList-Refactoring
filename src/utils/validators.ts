@@ -8,3 +8,11 @@ export const passwordValidator = (password: string) => {
   const result = password.trim().length <= 8;
   return result;
 };
+
+export const emptyStringValidator = (stringArray: string[]) => {
+  const hasEmptyString = !stringArray
+    .map((v, _) => v.trim())
+    .every((v) => v !== "");
+
+  return hasEmptyString;
+};

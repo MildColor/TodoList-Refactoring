@@ -23,7 +23,7 @@ const TodoListSection = styled.section`
   align-items: center;
   margin: 0 auto;
   width: 100%;
-  /* height: 100%; */
+  height: 600px;
 
   overflow-y: auto;
   background-color: white;

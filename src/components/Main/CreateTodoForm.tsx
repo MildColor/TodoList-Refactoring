@@ -1,43 +1,45 @@
 import React, { FormEvent, useState } from "react";
 import { usePostTodoMutation } from "../../hooks/queries/todo/usePostTodoMutation";
+import useForm from "../../hooks/common/useForm";
+import { emptyStringValidator } from "../../utils/validators";
 
 function CreateTodoForm() {
-  const [inputValues, setInputValues] = useState({ title: "", content: "" });
+  const [{ title, content }, onChange, setState] = useForm({
+    title: "",
+    content: "",
+  });
 
   const { mutate } = usePostTodoMutation();
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setInputValues({ ...inputValues, [name]: value });
-  };
-
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (inputValues.title.trim() === "" || inputValues.content.trim() === "") {
-      return alert("빈칸을 채워주세요");
-    }
-    mutate(inputValues);
-    setInputValues({ ...inputValues, title: "", content: "" });
+
+    emptyStringValidator([title, content])
+      ? alert("빈칸을 채워주세요")
+      : mutate({ title, content });
+    setState({ title: "", content: "" });
   };
 
   return (
     <div>
       <form onSubmit={onSubmitHandler}>
-        <label htmlFor="title">제목</label>
+        {/* <label htmlFor="title">제목</label> */}
         <input
           type="title"
           id="title"
           name="title"
-          value={inputValues.title}
-          onChange={onChangeHandler}
+          placeholder="Title"
+          value={title}
+          onChange={onChange}
         />
-        <label htmlFor="content">내용</label>
+        {/* <label htmlFor="content">내용</label> */}
         <input
           type="content"
           id="content"
           name="content"
-          value={inputValues.content}
-          onChange={onChangeHandler}
+          placeholder="Content"
+          value={content}
+          onChange={onChange}
         />
         <button type="submit">작성하기</button>
       </form>
