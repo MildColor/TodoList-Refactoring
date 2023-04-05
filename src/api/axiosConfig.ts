@@ -21,6 +21,7 @@ api.interceptors.request.use(function (config) {
   config.headers = { Authorization: accessToken };
   return config;
 });
+
 api.interceptors.response.use(
   (res) => res,
   async (error) => {
@@ -32,6 +33,7 @@ api.interceptors.response.use(
       window.alert("유효한 토큰이 없습니다. 로그인 해주세요.");
       return window.location.assign(PAGE_PATH.SIGN_IN);
     }
+
     return Promise.reject(error);
   }
 );
