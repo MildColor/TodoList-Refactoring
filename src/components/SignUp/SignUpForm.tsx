@@ -3,6 +3,7 @@ import useForm from "../../hooks/common/useForm";
 import { useSignUpMutation } from "../../hooks/queries/auth/useSignUpMutation";
 import { emailValidator, passwordValidator } from "../../utils/validators";
 import useError from "../../hooks/common/useError";
+import Input from "../common/Input/Input";
 
 function SignUpForm() {
   const [{ email, password }, onChange] = useForm({
@@ -41,10 +42,9 @@ function SignUpForm() {
 
   return (
     <div>
-      <h1>회원가입</h1>
       <form onSubmit={onSubmitHandler}>
         <label htmlFor="email">이메일</label>
-        <input
+        <Input
           type="email"
           id="email"
           name="email"
@@ -53,7 +53,7 @@ function SignUpForm() {
           autoComplete="on"
         />
         <label htmlFor="password">패스워드</label>
-        <input
+        <Input
           type="password"
           id="password"
           name="password"

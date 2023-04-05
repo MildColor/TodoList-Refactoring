@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import { PAGE_PATH } from "../../constants/path";
 import { removeLocalStorage } from "../../utils/localStorage";
+import * as Style from "./Header.styles";
 
-function Header() {
+function Header({ title }: { title: string }) {
   const navigate = useNavigate();
 
   const logoutHandler = () => {
@@ -14,32 +14,11 @@ function Header() {
   };
 
   return (
-    <ContainerDiv>
-      <h1>TODO</h1>
+    <>
+      <Style.Title>{title}</Style.Title>
       {/* <button onClick={logoutHandler}>로그아웃</button> */}
-    </ContainerDiv>
+    </>
   );
 }
 
 export default Header;
-
-const ContainerDiv = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100px;
-  align-items: center;
-  /* background-image: ${({ theme }) => theme.gradients.RainyAshville}; */
-
-  h1 {
-    font-size: 40px;
-    color: white;
-  }
-
-  button {
-    background-color: rgba(0, 0, 0, 0);
-    border: 0;
-    cursor: pointer;
-  }
-`;
-
-// background-color: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%)

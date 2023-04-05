@@ -29,7 +29,6 @@ function LoginForm() {
 
   return (
     <div>
-      <h1>로그인</h1>
       <form onSubmit={onSubmitHandler}>
         <label htmlFor="email">이메일</label>
         <input

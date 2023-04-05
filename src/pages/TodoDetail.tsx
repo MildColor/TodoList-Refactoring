@@ -11,7 +11,7 @@ function TodoDetail() {
 
   return (
     <Container>
-      <Header />
+      <Header title="Detail" />
       <StDiv>
         <h3>Title: {getTodoByIdData?.data?.data.title}</h3>
         <p>Content: {getTodoByIdData?.data?.data.content}</p>

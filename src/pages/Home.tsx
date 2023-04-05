@@ -1,24 +1,24 @@
-import styled from "styled-components";
 import Header from "../components/Header/Header";
 import CreateTodoForm from "../components/Main/CreateTodoForm";
 import TodoList from "../components/Main/TodoList";
+import {
+  BoardBody,
+  BoardFrame,
+  BoardHeader,
+} from "../components/common/Board/Board";
 
 function Home() {
   return (
-    <Container>
-      <Header />
-      <CreateTodoForm />
-      <TodoList />
-    </Container>
+    <BoardFrame>
+      <BoardHeader>
+        <Header title="TODO" />
+      </BoardHeader>
+      <BoardBody>
+        <CreateTodoForm />
+        <TodoList />
+      </BoardBody>
+    </BoardFrame>
   );
 }
 
 export default Home;
-
-const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  height: 700px;
-  width: 100%;
-  border-radius: 10px;
-`;
