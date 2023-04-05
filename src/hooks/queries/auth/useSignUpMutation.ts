@@ -4,6 +4,7 @@ import { authApis } from "../../../api/auth";
 import { PAGE_PATH } from "../../../constants/path";
 import { SignUpForm } from "../../../types/signUp";
 import { setLocalStorage } from "../../../utils/localStorage";
+import { onErrorType } from "../../../types/error";
 
 export const useSignUpMutation = () => {
   const navigate = useNavigate();
@@ -12,11 +13,18 @@ export const useSignUpMutation = () => {
     mutationFn: async (payload: SignUpForm) => {
       return await authApis.signUp(payload);
     },
+
     onSuccess: (data, variables, context) => {
       const { token } = data.data;
       setLocalStorage("accessToken", token);
       navigate(PAGE_PATH.HOME);
     },
-    onError: () => {},
+
+    onError: (error: onErrorType) => {
+      const { data, status } = error.response;
+
+      if (status === 409 && data.details === "이미 존재하는 유저입니다")
+        return alert("이미 존재하는 유저입니다.");
+    },
   });
 };

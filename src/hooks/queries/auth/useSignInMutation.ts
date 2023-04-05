@@ -4,6 +4,7 @@ import { authApis } from "../../../api/auth";
 import { PAGE_PATH } from "../../../constants/path";
 import { SignInForm } from "../../../types/signIn";
 import { setLocalStorage } from "../../../utils/localStorage";
+import { onErrorType } from "../../../types/error";
 
 export const useSignInMutation = () => {
   const navigate = useNavigate();
@@ -17,6 +18,9 @@ export const useSignInMutation = () => {
       setLocalStorage("accessToken", token);
       navigate(PAGE_PATH.HOME);
     },
-    onError: () => {},
+    onError: (error: onErrorType) => {
+      const { status } = error.response;
+      if (status === 400) return alert("로그인에 실패했습니다.");
+    },
   });
 };
