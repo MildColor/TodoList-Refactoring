@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent } from "react";
 import useForm from "../../hooks/common/useForm";
 import { useSignUpMutation } from "../../hooks/queries/auth/useSignUpMutation";
 import { emailValidator, passwordValidator } from "../../utils/validators";

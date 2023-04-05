@@ -22,7 +22,6 @@ function CreateTodoForm() {
 
   return (
     <div>
-      <h1>Todo 작성</h1>
       <form onSubmit={onSubmitHandler}>
         <label htmlFor="title">제목</label>
         <input

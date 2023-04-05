@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
     }
 
-    *{
+    * {
         box-sizing: border-box;
         font-family: "Pretendard-Regular", sans-serif;
     }  

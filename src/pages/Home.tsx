@@ -17,9 +17,11 @@ export default Home;
 
 const Container = styled.section`
   display: flex;
-  align-items: center;
+  /* align-items: center;
+  justify-content: center; */
   flex-direction: column;
-  width: 550px;
-  height: 800px;
-  padding-top: 100px;
+  height: 700px;
+  width: 100%;
+  /* padding: 10% 0; */
+  border-radius: 10px;
 `;

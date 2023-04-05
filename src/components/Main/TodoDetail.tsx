@@ -103,6 +103,7 @@ const StTodoDiv = styled.div`
 `;
 const TextBox = styled.div`
   width: 380px;
+  height: 80px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

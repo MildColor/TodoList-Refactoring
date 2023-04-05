@@ -7,6 +7,7 @@ export interface LayoutProps {
 function Layout({ children }: LayoutProps) {
   return (
     <StLayout>
+      <StLayoutBanner />
       <StSection>{children}</StSection>
     </StLayout>
   );
@@ -16,16 +17,21 @@ export default Layout;
 
 const StLayout = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+`;
+
+const StLayoutBanner = styled.div`
+  display: flex;
+  height: 300px;
+  width: 100%;
   background-image: ${({ theme }) => theme.gradients.AmyCrisp};
 `;
 
 const StSection = styled.section`
   display: flex;
-  width: 1280px;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  position: absolute;
+  width: 600px;
+  top: 100px;
 `;

@@ -15,7 +15,8 @@ function Header() {
 
   return (
     <ContainerDiv>
-      <button onClick={logoutHandler}>로그아웃</button>
+      <h1>TODO</h1>
+      {/* <button onClick={logoutHandler}>로그아웃</button> */}
     </ContainerDiv>
   );
 }
@@ -26,8 +27,13 @@ const ContainerDiv = styled.div`
   display: flex;
   width: 100%;
   height: 100px;
-  background-image: ${({ theme }) => theme.gradients.RainyAshville};
-  justify-content: flex-end;
+  align-items: center;
+  /* background-image: ${({ theme }) => theme.gradients.RainyAshville}; */
+
+  h1 {
+    font-size: 40px;
+    color: white;
+  }
 
   button {
     background-color: rgba(0, 0, 0, 0);
