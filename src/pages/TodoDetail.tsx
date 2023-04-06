@@ -2,24 +2,41 @@ import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../components/Header/Header";
 import { useGetTodoById } from "../hooks/queries/todo/useGetTodoById";
+import {
+  BoardBody,
+  BoardFrame,
+  BoardHeader,
+} from "../components/common/Board/Board";
+import Button from "../components/common/Button/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLongArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 function TodoDetail() {
   const navigate = useNavigate();
   const { id } = useParams();
 
   const { data: getTodoByIdData } = useGetTodoById(id);
+  const { title, content, createdAt, updatedAt } = getTodoByIdData?.data.data;
 
   return (
-    <Container>
-      <Header title="Detail" />
-      <StDiv>
-        <h3>Title: {getTodoByIdData?.data?.data.title}</h3>
-        <p>Content: {getTodoByIdData?.data?.data.content}</p>
-        <p>createdAt: {getTodoByIdData?.data?.data.createdAt}</p>
-        <p>updatedAt: {getTodoByIdData?.data?.data.updatedAt}</p>
-      </StDiv>
-      <button onClick={() => navigate(-1)}>뒤로가기</button>
-    </Container>
+    <>
+      <BoardFrame height="720px">
+        <BoardHeader>
+          <Header title="Detail" />
+        </BoardHeader>
+        <BoardBody height="640px">
+          <StDiv>
+            <h1>Title: {title}</h1>
+            <p>Content: {content}</p>
+            <p>createdAt: {createdAt.slice(0, 10)}</p>
+            <p>updatedAt: {updatedAt.slice(0, 10)}</p>
+          </StDiv>
+          <Button onClick={() => navigate(-1)}>
+            <FontAwesomeIcon icon={faLongArrowLeft} />
+          </Button>
+        </BoardBody>
+      </BoardFrame>
+    </>
   );
 }
 
@@ -27,23 +44,25 @@ export default TodoDetail;
 
 const StDiv = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
-  width: 600px;
-  height: 400px;
-  border: 1px solid black;
-  padding: 20px;
+  width: 100%;
+  height: 300px;
+  padding: 50px;
   border-radius: 30px;
   margin: 30px 0;
+  background-color: white;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
   * {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     word-break: break-all;
   }
-`;
-const Container = styled.section`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 `;

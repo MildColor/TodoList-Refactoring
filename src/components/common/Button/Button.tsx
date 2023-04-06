@@ -8,8 +8,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 function Button({
-  width = "80px",
-  height = "35px",
+  width = "30px",
+  height = "30px",
   children,
   ...props
 }: ButtonProps) {

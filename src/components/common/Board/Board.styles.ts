@@ -17,6 +17,9 @@ export const BoardHeader = styled.div<BoardProps>`
 `;
 
 export const BoardBody = styled.div<BoardProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
 `;

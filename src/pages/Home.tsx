@@ -1,6 +1,6 @@
 import Header from "../components/Header/Header";
-import CreateTodoForm from "../components/Main/CreateTodoForm";
-import TodoList from "../components/Main/TodoList";
+import CreateTodoForm from "../components/Home/CreateTodoForm";
+import TodoList from "../components/Home/TodoList";
 import {
   BoardBody,
   BoardFrame,
@@ -9,11 +9,11 @@ import {
 
 function Home() {
   return (
-    <BoardFrame>
+    <BoardFrame height="720px">
       <BoardHeader>
         <Header title="TODO" />
       </BoardHeader>
-      <BoardBody>
+      <BoardBody height="640px">
         <CreateTodoForm />
         <TodoList />
       </BoardBody>
