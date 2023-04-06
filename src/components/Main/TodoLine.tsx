@@ -99,10 +99,10 @@ export default TodoLine;
 
 const StTodoDiv = styled.div`
   display: flex;
-  width: 100%;
-  height: 40px;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  height: 40px;
   padding: 0 20px;
 `;
 
@@ -121,11 +121,4 @@ const StSpan = styled.span<{ width?: string }>`
   text-overflow: ellipsis;
   white-space: nowrap;
   word-break: break-all;
-`;
-
-const BtnBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 70px;
-  right: 0;
 `;

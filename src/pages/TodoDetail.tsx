@@ -10,6 +10,7 @@ import {
 import Button from "../components/common/Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { flexColumn } from "../styles/mixins";
 
 function TodoDetail() {
   const navigate = useNavigate();
@@ -49,9 +50,8 @@ function TodoDetail() {
 export default TodoDetail;
 
 const DetailContainer = styled.div`
-  display: flex;
+  ${flexColumn}
   justify-content: space-between;
-  flex-direction: column;
   width: 100%;
   height: 300px;
   padding: 50px;

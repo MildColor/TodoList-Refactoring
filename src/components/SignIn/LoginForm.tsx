@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { PAGE_PATH } from "../../constants/path";
 import Input from "../common/Input/Input";
 import styled from "styled-components";
+import { flexColumn } from "../../styles/mixins";
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -69,11 +70,10 @@ function LoginForm() {
 export default LoginForm;
 
 const Form = styled.form`
-  display: flex;
+  ${flexColumn};
+  justify-content: space-evenly;
   width: 60%;
   height: 400px;
-  flex-direction: column;
-  justify-content: space-evenly;
   background-color: white;
   border-radius: 5px;
   padding: 10px;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { flexCenter } from "../../styles/mixins";
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -16,10 +17,8 @@ function Layout({ children }: LayoutProps) {
 export default Layout;
 
 const StLayout = styled.div`
-  display: flex;
+  ${flexCenter}
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 `;
 
 const StLayoutBanner = styled.div`

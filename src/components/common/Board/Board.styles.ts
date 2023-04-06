@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { BoardProps } from "./Board";
+import { flexColumn } from "../../../styles/mixins";
 
 export const BoardFrame = styled.div<BoardProps>`
-  display: flex;
-  flex-direction: column;
+  ${flexColumn};
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   border-radius: 5px;
@@ -17,8 +17,7 @@ export const BoardHeader = styled.div<BoardProps>`
 `;
 
 export const BoardBody = styled.div<BoardProps>`
-  display: flex;
-  flex-direction: column;
+  ${flexColumn};
   align-items: center;
   width: ${(props) => props.width};
   height: ${(props) => props.height};

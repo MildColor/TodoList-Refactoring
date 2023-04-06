@@ -1,6 +1,6 @@
 import Header from "../components/Header/Header";
-import CreateTodoForm from "../components/Home/CreateTodoForm";
-import TodoList from "../components/Home/TodoList";
+import CreateTodoForm from "../components/Main/CreateTodoForm";
+import TodoList from "../components/Main/TodoList";
 import {
   BoardBody,
   BoardFrame,

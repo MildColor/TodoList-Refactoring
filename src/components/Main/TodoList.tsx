@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useGetTodos } from "../../hooks/queries/todo/useGetTodos";
 import { Todo } from "../../types/todos";
 import TodoLine from "./TodoLine";
+import { flexColumn } from "../../styles/mixins";
 
 function TodoList() {
   const { data: getTodosDatas } = useGetTodos();
@@ -27,8 +28,7 @@ function TodoList() {
 export default TodoList;
 
 const TodoListSection = styled.section<{ justifyContent?: string }>`
-  display: flex;
-  flex-direction: column;
+  ${flexColumn};
   align-items: center;
   justify-content: ${(props) => props.justifyContent || "flex-start"};
   margin: 0 auto;

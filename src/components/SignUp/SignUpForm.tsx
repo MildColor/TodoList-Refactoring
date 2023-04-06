@@ -8,6 +8,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { PAGE_PATH } from "../../constants/path";
 import Button from "../common/Button/Button";
+import { flexColumn } from "../../styles/mixins";
 
 function SignUpForm() {
   const navigate = useNavigate();
@@ -90,11 +91,10 @@ function SignUpForm() {
 export default SignUpForm;
 
 const Form = styled.form`
-  display: flex;
+  ${flexColumn};
+  justify-content: space-evenly;
   width: 60%;
   height: 400px;
-  flex-direction: column;
-  justify-content: space-evenly;
   background-color: white;
   border-radius: 5px;
   padding: 10px;
