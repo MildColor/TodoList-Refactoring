@@ -13,7 +13,7 @@ import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import { PAGE_PATH } from "../../constants/path";
 import Button from "../common/Button/Button";
 
-function TodoDetail({ todo }: { todo: Todo }) {
+function TodoLine({ todo }: { todo: Todo }) {
   const { id } = todo;
   const [isEdit, setIsEdit] = useState(false);
   const [{ title, content }, onChange] = useForm({
@@ -95,7 +95,7 @@ function TodoDetail({ todo }: { todo: Todo }) {
   );
 }
 
-export default TodoDetail;
+export default TodoLine;
 
 const StTodoDiv = styled.div`
   display: flex;
