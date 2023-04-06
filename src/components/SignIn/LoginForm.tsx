@@ -6,6 +6,7 @@ import Button from "../common/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { PAGE_PATH } from "../../constants/path";
 import Input from "../common/Input/Input";
+import styled from "styled-components";
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ function LoginForm() {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
+    <Form onSubmit={onSubmitHandler}>
       <label htmlFor="email">이메일</label>
       <Input
         type="email"
@@ -38,6 +39,7 @@ function LoginForm() {
         value={email}
         onChange={onChange}
         autoComplete="on"
+        height="30px"
       />
       <label htmlFor="password">패스워드</label>
       <Input
@@ -47,13 +49,33 @@ function LoginForm() {
         value={password}
         onChange={onChange}
         autoComplete="on"
+        height="30px"
       />
-      <Button type="submit">로그인하기</Button>
-      <Button type="button" onClick={() => goToSignUp()}>
+      <Button type="submit" width="100%" height="30px">
+        로그인
+      </Button>
+      <Button
+        type="button"
+        onClick={() => goToSignUp()}
+        width="100%"
+        height="30px"
+      >
         회원가입
       </Button>
-    </form>
+    </Form>
   );
 }
 
 export default LoginForm;
+
+const Form = styled.form`
+  display: flex;
+  width: 60%;
+  height: 400px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+`;

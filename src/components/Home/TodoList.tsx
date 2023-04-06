@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useGetTodos } from "../../hooks/queries/todo/useGetTodos";
 import { Todo } from "../../types/todos";
-import TodoDetail from "./TodoDetail";
+import TodoLine from "./TodoLine";
 
 function TodoList() {
   const { data: getTodosDatas } = useGetTodos();
@@ -16,7 +16,7 @@ function TodoList() {
       ) : (
         <TodoListSection>
           {getTodosDatas?.data?.data.reverse().map((todo: Todo) => {
-            return <TodoDetail key={todo.id} todo={todo} />;
+            return <TodoLine key={todo.id} todo={todo} />;
           })}
         </TodoListSection>
       )}
