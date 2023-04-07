@@ -10,9 +10,6 @@ import NotFound from "../pages/NotFound";
 import AuthenticateRoute from "./AuthenticateRoute";
 
 function Router() {
-  const AuthHome = AuthHOC(Home);
-  const AuthTodoDetail = AuthHOC(TodoDetail);
-
   return (
     <BrowserRouter>
       <Routes>
@@ -22,11 +19,8 @@ function Router() {
           <Route path={PAGE_PATH.SIGN_UP} element={<SignUp />} />
         </Route>
         <Route element={<AuthenticateRoute isAuthenticated={true} />}>
-          <Route path={PAGE_PATH.HOME} element={<AuthHome />} />
-          <Route
-            path={PAGE_PATH.TODO_DETAIL(":id")}
-            element={<AuthTodoDetail />}
-          />
+          <Route path={PAGE_PATH.HOME} element={<Home />} />
+          <Route path={PAGE_PATH.TODO_DETAIL(":id")} element={<TodoDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>
