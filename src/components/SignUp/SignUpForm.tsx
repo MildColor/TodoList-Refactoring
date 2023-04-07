@@ -3,7 +3,7 @@ import useForm from "../../hooks/common/useForm";
 import { useSignUpMutation } from "../../hooks/queries/auth/useSignUpMutation";
 import { emailValidator, passwordValidator } from "../../utils/validators";
 import useError from "../../hooks/common/useError";
-import Input from "../common/Input/Input";
+import Input, { InputField } from "../common/Input/Input";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { PAGE_PATH } from "../../constants/path";
@@ -33,7 +33,6 @@ function SignUpForm() {
       "email",
       isEmailValidity ? "이메일 형식에 맞지 않습니다." : ""
     );
-
     setErrorMessage(
       "password",
       isPasswordValidity ? "비밀번호는 8자 이상 입력해주세요" : ""
@@ -53,25 +52,29 @@ function SignUpForm() {
 
   return (
     <Form onSubmit={onSubmitHandler}>
-      <label htmlFor="email">이메일</label>
-      <Input
-        type="email"
+      <InputField
+        title="이메일"
+        // type="email"
         id="email"
         name="email"
         value={email}
         onChange={onChange}
         autoComplete="on"
-        height="30px"
+        width="100%"
+        height="100px"
+        errorMessage={errorMessage.email}
       />
-      <label htmlFor="password">패스워드</label>
-      <Input
+      <InputField
+        title="비밀번호"
         type="password"
         id="password"
         name="password"
         value={password}
         onChange={onChange}
         autoComplete="on"
-        height="30px"
+        width="100%"
+        height="100px"
+        errorMessage={errorMessage.password}
       />
       <Button type="submit" width="100%" height="30px">
         회원가입

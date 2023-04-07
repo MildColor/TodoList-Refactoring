@@ -1,6 +1,14 @@
 import { DefaultTheme, css } from "styled-components";
 
 export const colors = {
+  blue: {
+    "3": "#438AFF",
+    "5": "#A1C5FF",
+  },
+  red: {
+    "0": "#FF0000",
+    "3": "#FF8080",
+  },
   RainyAshville: {
     0: "#fbc2eb",
     1: "#a6c1ee",

@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { todosApis } from "../../../api/todo";
-import { onErrorType } from "../../../types/error";
+import { onErrorType } from "../../../types/custom";
 
 export const useDeleteTodoMutation = () => {
   const queryClient = useQueryClient();

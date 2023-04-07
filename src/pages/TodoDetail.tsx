@@ -20,30 +20,28 @@ function TodoDetail() {
   const { title, content, createdAt, updatedAt } = getTodoByIdData?.data.data;
 
   return (
-    <>
-      <BoardFrame height="720px">
-        <BoardHeader>
-          <Header title="Detail" />
-        </BoardHeader>
-        <BoardBody height="640px">
-          <DetailContainer>
-            <h1>Title: {title}</h1>
-            <p>Content: {content}</p>
-            <p>
-              createdAt:
-              {createdAt.slice(0, 10) + " " + createdAt.slice(11, 19)}
-            </p>
-            <p>
-              updatedAt:
-              {updatedAt.slice(0, 10) + " " + updatedAt.slice(11, 19)}
-            </p>
-          </DetailContainer>
-          <Button onClick={() => navigate(-1)}>
-            <FontAwesomeIcon icon={faLongArrowLeft} />
-          </Button>
-        </BoardBody>
-      </BoardFrame>
-    </>
+    <BoardFrame height="720px">
+      <BoardHeader>
+        <Header title="Detail" />
+      </BoardHeader>
+      <BoardBody height="640px">
+        <DetailContainer>
+          <h1>Title: {title}</h1>
+          <p>Content: {content}</p>
+          <p>
+            createdAt:
+            {createdAt.slice(0, 10) + " " + createdAt.slice(11, 19)}
+          </p>
+          <p>
+            updatedAt:
+            {updatedAt.slice(0, 10) + " " + updatedAt.slice(11, 19)}
+          </p>
+        </DetailContainer>
+        <Button onClick={() => navigate(-1)}>
+          <FontAwesomeIcon icon={faLongArrowLeft} />
+        </Button>
+      </BoardBody>
+    </BoardFrame>
   );
 }
 

@@ -4,7 +4,7 @@ import { authApis } from "../../../api/auth";
 import { PAGE_PATH } from "../../../constants/path";
 import { SignInForm } from "../../../types/signIn";
 import { setLocalStorage } from "../../../utils/localStorage";
-import { onErrorType } from "../../../types/error";
+import { onErrorType } from "../../../types/custom";
 
 export const useSignInMutation = () => {
   const navigate = useNavigate();

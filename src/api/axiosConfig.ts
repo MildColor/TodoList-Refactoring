@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios";
 import { getLocalStorage, removeLocalStorage } from "../utils/localStorage";
 import { PAGE_PATH } from "../constants/path";
-import { onErrorType } from "../types/error";
+import { onErrorType } from "../types/custom";
 
 const config = {
   baseURL: process.env.REACT_APP_BASE_URL,

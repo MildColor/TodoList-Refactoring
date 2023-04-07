@@ -5,7 +5,7 @@ import useError from "../../hooks/common/useError";
 import Button from "../common/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { PAGE_PATH } from "../../constants/path";
-import Input from "../common/Input/Input";
+import Input, { InputField } from "../common/Input/Input";
 import styled from "styled-components";
 import { flexColumn } from "../../styles/mixins";
 
@@ -32,26 +32,31 @@ function LoginForm() {
 
   return (
     <Form onSubmit={onSubmitHandler}>
-      <label htmlFor="email">이메일</label>
-      <Input
+      <InputField
+        title="이메일"
         type="email"
         id="email"
         name="email"
         value={email}
         onChange={onChange}
         autoComplete="on"
-        height="30px"
+        width="100%"
+        height="100px"
+        errorMessage={errorMessage.email}
       />
-      <label htmlFor="password">패스워드</label>
-      <Input
+      <InputField
+        title="비밀번호"
         type="password"
         id="password"
         name="password"
         value={password}
         onChange={onChange}
         autoComplete="on"
-        height="30px"
+        width="100%"
+        height="100px"
+        errorMessage={errorMessage.password}
       />
+
       <Button type="submit" width="100%" height="30px">
         로그인
       </Button>
