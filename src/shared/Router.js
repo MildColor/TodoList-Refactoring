@@ -7,6 +7,7 @@ import TodoDetail from "../pages/TodoDetail";
 import { PAGE_PATH } from "../constants/path";
 import AuthHOC from "../components/HOC/AuthHOC";
 import NotFound from "../pages/NotFound";
+import AuthenticateRoute from "./AuthenticateRoute";
 
 function Router() {
   const AuthHome = AuthHOC(Home);
@@ -16,13 +17,17 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path={PAGE_PATH.NOT_FOUND} element={<NotFound />} />
-        <Route path={PAGE_PATH.HOME} element={<AuthHome />} />
-        <Route path={PAGE_PATH.SIGN_IN} element={<SignIn />} />
-        <Route path={PAGE_PATH.SIGN_UP} element={<SignUp />} />
-        <Route
-          path={PAGE_PATH.TODO_DETAIL(":id")}
-          element={<AuthTodoDetail />}
-        />
+        <Route element={<AuthenticateRoute isAuthenticated={false} />}>
+          <Route path={PAGE_PATH.SIGN_IN} element={<SignIn />} />
+          <Route path={PAGE_PATH.SIGN_UP} element={<SignUp />} />
+        </Route>
+        <Route element={<AuthenticateRoute isAuthenticated={true} />}>
+          <Route path={PAGE_PATH.HOME} element={<AuthHome />} />
+          <Route
+            path={PAGE_PATH.TODO_DETAIL(":id")}
+            element={<AuthTodoDetail />}
+          />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
