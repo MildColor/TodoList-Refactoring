@@ -4,15 +4,15 @@ import { PAGE_PATH } from "../../constants/path";
 import { getLocalStorage, removeLocalStorage } from "../../utils/localStorage";
 import * as Style from "./Header.styles";
 import Button from "../common/Button/Button";
+import { ACCESS_TOKEN_KEY } from "../../constants/token";
 
 function Header({ title }: { title: string }) {
   const navigate = useNavigate();
 
-  const token = getLocalStorage("accessToken");
+  const token = getLocalStorage(ACCESS_TOKEN_KEY);
 
   const logoutHandler = () => {
-    removeLocalStorage("accessToken");
-    removeLocalStorage("userId");
+    removeLocalStorage(ACCESS_TOKEN_KEY);
     navigate(PAGE_PATH.SIGN_IN);
   };
 

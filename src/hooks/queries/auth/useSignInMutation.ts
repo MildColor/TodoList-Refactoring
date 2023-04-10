@@ -5,6 +5,7 @@ import { PAGE_PATH } from "../../../constants/path";
 import { SignInForm } from "../../../types/signIn";
 import { setLocalStorage } from "../../../utils/localStorage";
 import { onErrorType } from "../../../types/custom";
+import { ACCESS_TOKEN_KEY } from "../../../constants/token";
 
 export const useSignInMutation = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export const useSignInMutation = () => {
     },
     onSuccess: (data, variables, context) => {
       const { token } = data.data;
-      setLocalStorage("accessToken", token);
+      setLocalStorage(ACCESS_TOKEN_KEY, token);
       navigate(PAGE_PATH.HOME);
     },
     onError: (error: onErrorType) => {
