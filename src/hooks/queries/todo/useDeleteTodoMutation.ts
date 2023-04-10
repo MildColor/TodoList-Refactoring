@@ -9,9 +9,11 @@ export const useDeleteTodoMutation = () => {
     mutationFn: async (payload: string) => {
       return await todosApis.deleteTodo(payload);
     },
+
     onSuccess: (data, variables, context) => {
       queryClient.invalidateQueries({ queryKey: ["getTodos"] });
     },
+
     onError: (error: onErrorType) => {
       console.log(error);
       const { data, status } = error.response;

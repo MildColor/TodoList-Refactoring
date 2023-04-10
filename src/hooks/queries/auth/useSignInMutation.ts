@@ -14,11 +14,13 @@ export const useSignInMutation = () => {
     mutationFn: async (payload: SignInForm) => {
       return await authApis.signIn(payload);
     },
+
     onSuccess: (data, variables, context) => {
       const { token } = data.data;
       setLocalStorage(ACCESS_TOKEN_KEY, token);
       navigate(PAGE_PATH.HOME);
     },
+
     onError: (error: onErrorType) => {
       const { status } = error.response;
       if (status === 400) return alert("로그인에 실패했습니다.");

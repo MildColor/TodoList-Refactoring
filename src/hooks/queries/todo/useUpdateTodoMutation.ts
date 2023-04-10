@@ -9,9 +9,11 @@ export const useUpdateTodoMutation = () => {
     mutationFn: async (payload: Todo) => {
       return await todosApis.updateTodo(payload);
     },
+
     onSuccess: (data, variables, context) => {
       queryClient.invalidateQueries({ queryKey: ["getTodos"] });
     },
+
     onError: (e) => {
       console.log(e);
     },
