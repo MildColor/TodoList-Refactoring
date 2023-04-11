@@ -82,27 +82,27 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 ### 게시글 작성
 
 
-<img width=600px src="https://user-images.githubusercontent.com/49224104/212609740-7d7b225b-ff8f-4983-a22c-158f307fd64f.gif"/>
+<img width=600px src=/>
 
 <br/>
 
 ### 게시글 수정
-<img width=600px src="https://user-images.githubusercontent.com/49224104/212610175-9cf8f851-e183-4669-9865-6e0d9bb38e1b.gif"/>
+<img width=600px src=/>
 
 <br/>
 
 ### 게시글 삭제
-<img width=600px src="https://user-images.githubusercontent.com/49224104/212610223-782393ca-0eb2-4e46-8529-783cdcbb9074.gif"/>
+<img width=600px src=/>
 
 <br/>
 
 ### 회원가입
-<img width=600px src="https://user-images.githubusercontent.com/49224104/212610247-8895587c-fe2d-436e-a946-251e41d80fc0.gif"/>
+<img width=600px src=/>
 
 <br/>
 
 ### 로그인
-<img width=600px src="https://user-images.githubusercontent.com/49224104/212610311-c3b0ff89-a639-4beb-afe9-4649735ffd47.gif"/>
+<img width=600px src=/>
 
 <br/>
 
