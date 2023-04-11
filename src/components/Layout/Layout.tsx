@@ -1,36 +1,15 @@
-import styled from "styled-components";
-import { flexCenter } from "../../styles/mixins";
-
+import * as Style from "./Layout.style";
 export interface LayoutProps {
   children: React.ReactNode;
 }
 
 function Layout({ children }: LayoutProps) {
   return (
-    <StLayout>
-      <StLayoutBanner />
-      <StSection>{children}</StSection>
-    </StLayout>
+    <Style.Layout>
+      <Style.Banner />
+      <Style.Section>{children}</Style.Section>
+    </Style.Layout>
   );
 }
 
 export default Layout;
-
-const StLayout = styled.div`
-  ${flexCenter}
-  flex-direction: column;
-`;
-
-const StLayoutBanner = styled.div`
-  display: flex;
-  height: 300px;
-  width: 100%;
-  background-image: ${({ theme }) => theme.gradients.AmyCrisp};
-`;
-
-const StSection = styled.section`
-  display: flex;
-  position: absolute;
-  width: 600px;
-  top: 100px;
-`;
