@@ -38,9 +38,8 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 
 ## :sparkles: 개발기간
 
-2022/12/15~2022/01/05 (개발기간)
+2022/03 ~ 2022/04 
 
-2022/01/05~2022/01/16  (리펙토링 기간)
 
 <br/>
 
@@ -58,7 +57,7 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 - [x] 뒤로가기 클릭시 접속한 todo 순서대로 뒤로가기가 처리됨
 - [x] todo list부분의 제목 클릭시 상세 todo 접근 가능
 - [x] 로그인 되지 않았을시(localstorage에 token이 없을시) 로그인 창으로 이동
-  - [x] 로그아웃시 토큰을 지우고 로그인창으로 이동
+- [x] 로그아웃시 토큰을 지우고 로그인창으로 이동
 
 
 <br/>
@@ -67,11 +66,8 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 ## :open_file_folder: 파일구조
 
 - 대분류) 기능 (api, constant page등)
-<--! - 대분류) 기능 (api, constant page등) -->
 
 - 중분류) 페이지 경로 (Main, SignUp, SignIn)
-
-<--! - 중분류) 페이지 경로 (Main, SignUp, SignIn) -->
 
 - 소분류) 기타
 
