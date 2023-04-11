@@ -22,10 +22,8 @@ export const useSignUpMutation = () => {
     },
 
     onError: (error: onErrorType) => {
-      const { data, status } = error.response;
-
-      if (status === 409 && data.details === "이미 존재하는 유저입니다")
-        return alert(TODO_ALERTS.EXIST_USER);
+      const { status } = error.response;
+      if (status === 409) return alert(TODO_ALERTS.EXIST_USER);
     },
   });
 };

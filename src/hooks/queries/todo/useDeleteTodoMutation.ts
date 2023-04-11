@@ -16,14 +16,8 @@ export const useDeleteTodoMutation = () => {
     },
 
     onError: (error: onErrorType) => {
-      console.log(error);
-      const { data, status } = error.response;
-      if (
-        status === 400 &&
-        data.details === "todo를 찾는 도중 문제가 생겼습니다"
-      ) {
-        alert(TODO_ALERTS.FAIL_GET_TODO);
-      }
+      const { status } = error.response;
+      if (status === 400) return alert(TODO_ALERTS.FAIL_GET_TODO);
     },
   });
 };

@@ -21,7 +21,7 @@ function CreateTodoForm() {
     e.preventDefault();
 
     emptyStringValidator([title, content])
-      ? alert(TODO_ALERTS.EMPTY_FORM)
+      ? alert(TODO_ALERTS.INVALID_VALUE)
       : mutate({ title, content });
     setState({ title: "", content: "" });
   };

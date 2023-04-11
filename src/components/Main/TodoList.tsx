@@ -10,13 +10,13 @@ function TodoList() {
 
   return (
     <>
-      {getTodosDatas?.data.data.length === 0 ? (
+      {getTodosDatas?.length === 0 ? (
         <TodoListSection justifyContent="center">
           Empty TodoList!
         </TodoListSection>
       ) : (
         <TodoListSection>
-          {getTodosDatas?.data?.data.reverse().map((todo: Todo) => {
+          {getTodosDatas?.reverse().map((todo: Todo) => {
             return <TodoLine key={todo.id} todo={todo} />;
           })}
         </TodoListSection>

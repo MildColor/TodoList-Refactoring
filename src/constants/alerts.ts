@@ -7,5 +7,6 @@ export const TODO_ALERTS = {
   FAIL_DELETE: "Todo 삭제를 실패했습니다",
   FAIL_LOGIN: "로그인에 실패했습니다.",
   INVALID_TOKEN: "유효한 토큰이 없습니다. 로그인 해주세요.",
-  EMPTY_FORM: "이메일 / 패스워드 값이 비어있습니다",
+  INVALID_VALUE: "이메일 / 패스워드 값이 비어있습니다",
+  TODO_SOMETHING_WRONG: "todo를 찾는 도중 문제가 생겼습니다",
 };

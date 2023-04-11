@@ -17,7 +17,7 @@ function TodoDetail() {
   const { id } = useParams();
 
   const { data: getTodoByIdData } = useGetTodoById(id);
-  const { title, content, createdAt, updatedAt } = getTodoByIdData?.data.data;
+  const { title, content, createdAt, updatedAt } = getTodoByIdData;
 
   return (
     <BoardFrame height="720px">
