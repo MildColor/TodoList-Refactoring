@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenter } from "../../styles/mixins";
+import { flexCenter } from "../../../styles/mixins";
 
 export interface LayoutProps {
   children: React.ReactNode;

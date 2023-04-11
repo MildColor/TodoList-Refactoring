@@ -1,4 +1,4 @@
-import Header from "../components/Header/Header";
+import Header from "../components/common/Header/Header";
 import CreateTodoForm from "../components/Main/CreateTodoForm";
 import TodoList from "../components/Main/TodoList";
 import {
