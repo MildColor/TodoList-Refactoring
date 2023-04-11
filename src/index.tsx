@@ -11,7 +11,7 @@ import GlobalStyle from "./styles/globalStyle";
 import { Reset } from "styled-reset";
 import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
-import Layout from "./components/Layout/Layout";
+import Layout from "./components/common/Layout/Layout";
 
 const queryClient = new QueryClient({
   defaultOptions: {

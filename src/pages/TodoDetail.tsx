@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import Header from "../components/Header/Header";
+import Header from "../components/common/Header/Header";
 import { useGetTodoById } from "../hooks/queries/todo/useGetTodoById";
 import {
   BoardBody,

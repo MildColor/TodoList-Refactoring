@@ -5,7 +5,7 @@ import {
   BoardFrame,
   BoardHeader,
 } from "../components/common/Board/Board";
-import Header from "../components/Header/Header";
+import Header from "../components/common/Header/Header";
 
 function SignIn() {
   return (
