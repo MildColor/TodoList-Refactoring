@@ -6,6 +6,7 @@ import { SignInForm } from "../../../types/signIn";
 import { setLocalStorage } from "../../../utils/localStorage";
 import { onErrorType } from "../../../types/custom";
 import { ACCESS_TOKEN_KEY } from "../../../constants/token";
+import { TODO_ALERTS } from "../../../constants/alerts";
 
 export const useSignInMutation = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ export const useSignInMutation = () => {
 
     onError: (error: onErrorType) => {
       const { status } = error.response;
-      if (status === 400) return alert("로그인에 실패했습니다.");
+      if (status === 400) return alert(TODO_ALERTS.FAIL_LOGIN);
     },
   });
 };

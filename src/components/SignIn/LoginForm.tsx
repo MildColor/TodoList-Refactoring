@@ -5,7 +5,7 @@ import useError from "../../hooks/common/useError";
 import Button from "../common/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { PAGE_PATH } from "../../constants/path";
-import Input, { InputField } from "../common/Input/Input";
+import { InputField } from "../common/Input/Input";
 import styled from "styled-components";
 import { flexColumn } from "../../styles/mixins";
 

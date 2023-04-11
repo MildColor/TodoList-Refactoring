@@ -5,7 +5,6 @@ import Home from "../pages/Home";
 import SignUp from "../pages/SignUp";
 import TodoDetail from "../pages/TodoDetail";
 import { PAGE_PATH } from "../constants/path";
-import AuthHOC from "../components/HOC/AuthHOC";
 import NotFound from "../pages/NotFound";
 import AuthenticateRoute from "./AuthenticateRoute";
 

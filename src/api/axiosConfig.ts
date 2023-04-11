@@ -1,8 +1,8 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { getLocalStorage, removeLocalStorage } from "../utils/localStorage";
 import { PAGE_PATH } from "../constants/path";
-import { onErrorType } from "../types/custom";
 import { ACCESS_TOKEN_KEY } from "../constants/token";
+import { TODO_ALERTS } from "../constants/alerts";
 
 const config = {
   baseURL: process.env.REACT_APP_BASE_URL,
@@ -31,7 +31,7 @@ api.interceptors.response.use(
       error?.response?.data?.details === "Token is missing"
     ) {
       removeLocalStorage("token");
-      window.alert("유효한 토큰이 없습니다. 로그인 해주세요.");
+      window.alert(TODO_ALERTS.INVALID_TOKEN);
       return window.location.assign(PAGE_PATH.SIGN_IN);
     }
 

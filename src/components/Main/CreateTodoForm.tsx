@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { Button } from "../common/Button/Button.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { TODO_ALERTS } from "../../constants/alerts";
 
 function CreateTodoForm() {
   const [{ title, content }, onChange, setState] = useForm({
@@ -20,7 +21,7 @@ function CreateTodoForm() {
     e.preventDefault();
 
     emptyStringValidator([title, content])
-      ? alert("빈칸을 채워주세요")
+      ? alert(TODO_ALERTS.EMPTY_FORM)
       : mutate({ title, content });
     setState({ title: "", content: "" });
   };

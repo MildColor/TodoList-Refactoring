@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { todosApis } from "../../../api/todo";
 import { onErrorType } from "../../../types/custom";
+import { TODO_ALERTS } from "../../../constants/alerts";
 
 export const useDeleteTodoMutation = () => {
   const queryClient = useQueryClient();
@@ -21,7 +22,7 @@ export const useDeleteTodoMutation = () => {
         status === 400 &&
         data.details === "todo를 찾는 도중 문제가 생겼습니다"
       ) {
-        alert("todo를 찾는 도중 문제가 생겼습니다");
+        alert(TODO_ALERTS.FAIL_GET_TODO);
       }
     },
   });

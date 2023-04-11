@@ -5,6 +5,7 @@ import { PAGE_PATH } from "../../../constants/path";
 import { SignUpForm } from "../../../types/signUp";
 import { setLocalStorage } from "../../../utils/localStorage";
 import { onErrorType } from "../../../types/custom";
+import { TODO_ALERTS } from "../../../constants/alerts";
 
 export const useSignUpMutation = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export const useSignUpMutation = () => {
       const { data, status } = error.response;
 
       if (status === 409 && data.details === "이미 존재하는 유저입니다")
-        return alert("이미 존재하는 유저입니다.");
+        return alert(TODO_ALERTS.EXIST_USER);
     },
   });
 };
