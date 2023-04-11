@@ -15,22 +15,19 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 ## 스텍 선정 이유
 
 - react-query
-
-  - 상태를 서버 상태와 클라이언트 상태로 관심사를 분리를 도와주는 라이브러리로 api 통신을 용이하게 사용할수 있는 기능을 제공해 단순한 코드만으로 다양한 기능을 제공해주어 선택하였다.
   - 과거 redux와 redux thunk를 통해 상태를 관리한 경우, 보일러플레이트가 증가하였고 클라이언트와 서버 상태를 관리하기 복잡해진 경험이 발생 
   - react-query는 서버와 클라이언트 상태를 분리해주고 api 통신에 유리한 
   
 
 - styled-components
 
-
   - CSS in JS로 css의 재사용성, 유지보수, 추상화 정도 높여줄수 있었기 때문에 선택하였다.
 
 
 - typescript
 
-  
-  - 컴파일 단계에서 오류를 발견할수 있고 IDE의 타입 추론 기능을 통해서 가독성 및 생산성을 높일수 있어서 선택하였다.
+  - 컴파일시 발생할 수 있는 오류를 발견 가능하여 안전하다.
+  - IDE에 타입 힌트, 추론을 줌으로써 자동완성 기능을 통해 개발자의 생산성을 높여준다.
   
   
 
@@ -39,6 +36,7 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 ## :sparkles: 개발기간
 
 2022/03 ~ 2022/04 
+
 
 
 <br/>
@@ -57,7 +55,7 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 - [x] 뒤로가기 클릭시 접속한 todo 순서대로 뒤로가기가 처리됨
 - [x] todo list부분의 제목 클릭시 상세 todo 접근 가능
 - [x] 로그인 되지 않았을시(localstorage에 token이 없을시) 로그인 창으로 이동
-- [x] 로그아웃시 토큰을 지우고 로그인창으로 이동
+  - [x] 로그아웃시 토큰을 지우고 로그인창으로 이동
 
 
 <br/>
@@ -72,6 +70,37 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 - 소분류) 기타
 
 ```tsx
+
+src
+ ┣ api
+ ┣ components
+ ┃ ┣ common
+ ┃ ┃ ┣ Board
+ ┃ ┃ ┣ Button
+ ┃ ┃ ┣ Exception
+ ┃ ┃ ┣ Input
+ ┃ ┃ ┗ Loader
+ ┃ ┣ Header
+ ┃ ┣ HOC
+ ┃ ┣ Layout
+ ┃ ┣ Main
+ ┃ ┣ SignIn
+ ┃ ┗ SignUp
+ ┣ constants
+ ┣ hooks
+ ┃ ┣ auth
+ ┃ ┣ common
+ ┃ ┗ queries
+ ┃ ┃ ┣ auth
+ ┃ ┃ ┗ todo
+ ┣ pages
+ ┣ shared
+ ┣ styles
+ ┣ types
+ ┣ utils
+ ┣ App.tsx
+ ┣ index.css
+ ┗ index.tsx
 
 ```
 
