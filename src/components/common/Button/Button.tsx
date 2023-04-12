@@ -4,7 +4,7 @@ import * as Style from "./Button.styles";
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   width?: string;
   height?: string;
-  color?: "primary" | "warning";
+  color?: "primary" | "secondary" | "warning";
   children?: React.ReactNode;
 }
 

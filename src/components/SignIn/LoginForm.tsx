@@ -57,7 +57,7 @@ function LoginForm() {
         errorMessage={errorMessage.password}
       />
 
-      <Button type="submit" width="100%" height="30px">
+      <Button type="submit" width="100%" height="30px" color="secondary">
         로그인
       </Button>
       <Button
@@ -65,6 +65,7 @@ function LoginForm() {
         onClick={() => goToSignUp()}
         width="100%"
         height="30px"
+        color="secondary"
       >
         회원가입
       </Button>

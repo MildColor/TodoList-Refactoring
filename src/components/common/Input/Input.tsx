@@ -5,6 +5,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   width?: string;
   height?: string;
   title?: string;
+  border?: string;
   errorMessage?: string;
 }
 
@@ -21,8 +22,8 @@ export function InputField({
 }: InputProps) {
   return (
     <Style.InputLayout width={width} height={height}>
-      <Style.InputTitle>{title}</Style.InputTitle>
-      <Style.Input height="30px" {...props} />
+      <Style.InputLabel>{title}</Style.InputLabel>
+      <Style.Input height="60px" {...props} border="2px" />
       <Style.ErrorMessage>{errorMessage}</Style.ErrorMessage>
     </Style.InputLayout>
   );

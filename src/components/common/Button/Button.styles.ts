@@ -7,6 +7,7 @@ export const Button = styled.button<ButtonProps>`
   background-color: ${({ theme, color }) => {
     const colors = {
       primary: "white",
+      secondary: theme.colors.blue[5],
       warning: theme.colors.red[3],
     };
     return colors[color ?? "primary"];
