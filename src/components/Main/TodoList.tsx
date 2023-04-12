@@ -16,7 +16,7 @@ function TodoList() {
         </TodoListSection>
       ) : (
         <TodoListSection>
-          {getTodosDatas?.reverse().map((todo: Todo) => {
+          {getTodosDatas.map((todo: Todo) => {
             return <TodoLine key={todo.id} todo={todo} />;
           })}
         </TodoListSection>
