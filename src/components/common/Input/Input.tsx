@@ -27,5 +27,3 @@ export function InputField({
     </Style.InputLayout>
   );
 }
-
-export default Input;

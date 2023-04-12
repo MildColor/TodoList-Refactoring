@@ -3,7 +3,7 @@ import useForm from "../../hooks/common/useForm";
 import { useSignUpMutation } from "../../hooks/queries/auth/useSignUpMutation";
 import { emailValidator, passwordValidator } from "../../utils/validators";
 import useError from "../../hooks/common/useError";
-import Input, { InputField } from "../common/Input/Input";
+import { InputField } from "../common/Input/Input";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { PAGE_PATH } from "../../constants/path";

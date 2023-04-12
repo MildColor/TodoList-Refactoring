@@ -6,12 +6,12 @@ import { useUpdateTodoMutation } from "../../hooks/queries/todo/useUpdateTodoMut
 import { Todo } from "../../types/todos";
 import useForm from "../../hooks/common/useForm";
 import { emptyStringValidator } from "../../utils/validators";
-import Input from "../common/Input/Input";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import { PAGE_PATH } from "../../constants/path";
 import Button from "../common/Button/Button";
+import { Input } from "../common/Input/Input";
 
 function TodoLine({ todo }: { todo: Todo }) {
   const { id } = todo;
