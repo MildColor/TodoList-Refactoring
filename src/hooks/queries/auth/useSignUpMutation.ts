@@ -23,7 +23,10 @@ export const useSignUpMutation = () => {
 
     onError: (error: onErrorType) => {
       const { status } = error.response;
-      if (status === 409) return alert(TODO_ALERTS.EXIST_USER);
+      if (status === 409) {
+        alert(TODO_ALERTS.EXIST_USER);
+        navigate(PAGE_PATH.SIGN_IN);
+      }
     },
   });
 };
