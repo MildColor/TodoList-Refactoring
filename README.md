@@ -12,16 +12,16 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 </div>
 <br/>
 
-## 스텍 선정 이유
+## 스택 선정 이유
 
 - react-query
   - 과거 redux와 redux thunk를 통해 상태를 관리한 경우, 보일러플레이트가 증가하였고 클라이언트와 서버 상태를 관리하기 복잡해진 경험이 발생 
-  - react-query는 서버와 클라이언트 상태를 분리해주고 api 통신에 유리한 
+  - react-query는 서버와 클라이언트 상태를 분리해주고 상태관리를 단순화 시켜 개발자의 편의성과 생산성에 이점을 줌
   
 
 - styled-components
 
-  - CSS in JS로 css의 재사용성, 유지보수, 추상화 정도 높여줄수 있었기 때문에 선택하였다.
+  - CSS in JS로 동적 스타일링, 조건부 스타일리이 가능하고, 재사용성과 확장성의 이점이 있어 선택
 
 
 - typescript
@@ -50,7 +50,6 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
   
 ### Todo List 페이지
 - [x] todoList CRUD구현
-- [x] 게시글 삭제,수정,작성시 react-query의 optimistic update를 사용
 - [x] 로그인 되었을시 로그인 및 회원가입창 접근 불가
 - [x] 뒤로가기 클릭시 접속한 todo 순서대로 뒤로가기가 처리됨
 - [x] todo list부분의 제목 클릭시 상세 todo 접근 가능
@@ -72,32 +71,25 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 ```tsx
 
 src
- ┣ api
- ┣ components
- ┃ ┣ common
- ┃ ┃ ┣ Board
- ┃ ┃ ┣ Button
- ┃ ┃ ┣ Exception
- ┃ ┃ ┣ Input
- ┃ ┃ ┗ Loader
+ ┣ api // api 설정 및 분리 
+ ┣ components // 컴포넌트 폴더 
+ ┃ ┣ common // 공통 사용 컴포넌트
  ┃ ┣ Header
- ┃ ┣ HOC
+ ┃ ┣ HOC 
  ┃ ┣ Layout
  ┃ ┣ Main
  ┃ ┣ SignIn
  ┃ ┗ SignUp
- ┣ constants
- ┣ hooks
- ┃ ┣ auth
- ┃ ┣ common
- ┃ ┗ queries
- ┃ ┃ ┣ auth
- ┃ ┃ ┗ todo
- ┣ pages
- ┣ shared
- ┣ styles
- ┣ types
- ┣ utils
+ ┣ constants // 리터럴값을 관리하기 위한 폴더  
+ ┣ hooks // custom hooks 폴더
+ ┃ ┣ auth // signIn, signUp 관련 hooks 
+ ┃ ┣ common // 공통 사용 hooks
+ ┃ ┗ queries // react-query custom hooks
+ ┣ pages // 페이지별 컴포넌트 집합
+ ┣ shared 
+ ┣ styles // 스타일 설정 폴더
+ ┣ types // 타입 선언 폴더 
+ ┣ utils // 편의용 함수 폴더
  ┣ App.tsx
  ┣ index.css
  ┗ index.tsx
