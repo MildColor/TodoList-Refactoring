@@ -44,53 +44,61 @@ function TodoLine({ todo }: { todo: Todo }) {
   return (
     <StTodoLi>
       {!isEdit ? (
-        <Link to={PAGE_PATH.TODO_DETAIL(id)}>
-          <StSpan width="120px">{todo.title}</StSpan>
-          <StSpan width="350px">{todo.content}</StSpan>
-        </Link>
-      ) : (
-        <Form onSubmit={onSubmitHandler} id="edit-todo">
-          <Input
-            type="title"
-            id="title"
-            name="title"
-            value={title}
-            onChange={onChange}
-            width="120px"
+        <>
+          <Link to={PAGE_PATH.TODO_DETAIL(id)}>
+            <StSpan width="120px">{todo.title}</StSpan>
+            <StSpan width="350px">{todo.content}</StSpan>
+          </Link>
+
+          <Button type="button" onClick={deleteHandler}>
+            <FontAwesomeIcon icon={faTrash} />
+          </Button>
+          <Button
+            type="button"
+            onClick={() => setIsEdit(!isEdit)}
+            width="30px"
             height="30px"
-          />
-          <Input
-            type="content"
-            id="content"
-            name="content"
-            value={content}
-            onChange={onChange}
-            width="350px"
-            height="30px"
-          />
-        </Form>
-      )}
-      {!isEdit ? (
-        <Button type="button" onClick={deleteHandler}>
-          <FontAwesomeIcon icon={faTrash} />
-        </Button>
+          >
+            <FontAwesomeIcon icon={faEdit} />
+          </Button>
+        </>
       ) : (
-        <Button type="submit" form="edit-todo">
-          <FontAwesomeIcon icon={faCheck} />
-        </Button>
+        <>
+          <Form onSubmit={onSubmitHandler} id="edit-todo">
+            <Input
+              type="title"
+              id="title"
+              name="title"
+              value={title}
+              onChange={onChange}
+              width="120px"
+              height="30px"
+            />
+            <Input
+              type="content"
+              id="content"
+              name="content"
+              value={content}
+              onChange={onChange}
+              width="350px"
+              height="30px"
+            />
+          </Form>
+
+          <Button type="submit" form="edit-todo">
+            <FontAwesomeIcon icon={faCheck} />
+          </Button>
+
+          <Button
+            type="button"
+            onClick={() => setIsEdit(!isEdit)}
+            width="30px"
+            height="30px"
+          >
+            <FontAwesomeIcon icon={faTimes} />
+          </Button>
+        </>
       )}
-      <Button
-        type="button"
-        onClick={() => setIsEdit(!isEdit)}
-        width="30px"
-        height="30px"
-      >
-        {!isEdit ? (
-          <FontAwesomeIcon icon={faEdit} />
-        ) : (
-          <FontAwesomeIcon icon={faTimes} />
-        )}
-      </Button>
     </StTodoLi>
   );
 }
