@@ -1,12 +1,19 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SignIn from "../pages/SignIn";
-import Home from "../pages/Home";
-import SignUp from "../pages/SignUp";
-import TodoDetail from "../pages/TodoDetail";
+// import SignIn from "../pages/SignIn";
+// import Home from "../pages/Home";
+// import SignUp from "../pages/SignUp";
+// import TodoDetail from "../pages/TodoDetail";
 import { PAGE_PATH } from "../constants/path";
-import NotFound from "../pages/NotFound";
+// import NotFound from "../pages/NotFound";
 import AuthenticateRoute from "./AuthenticateRoute";
+import Loader from "../components/common/Loader/Loader";
+
+const NotFound = lazy(() => import("../pages/NotFound"));
+const SignIn = lazy(() => import("../pages/SignIn"));
+const SignUp = lazy(() => import("../pages/SignUp"));
+const Home = lazy(() => import("../pages/Home"));
+const TodoDetail = lazy(() => import("../pages/TodoDetail"));
 
 function Router() {
   return (
