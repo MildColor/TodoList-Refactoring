@@ -10,11 +10,11 @@ import {
 function Home() {
   return (
     <BoardFrame height="720px">
-      <BoardHeader>
+      <BoardHeader height="120px">
         <Header title="TODO" />
-      </BoardHeader>
-      <BoardBody height="640px">
         <TodoForm />
+      </BoardHeader>
+      <BoardBody height="600px">
         <TodoList />
       </BoardBody>
     </BoardFrame>

@@ -4,6 +4,7 @@ import * as Style from "./Board.styles";
 export interface BoardProps {
   width?: string;
   height?: string;
+  direction?: string;
   children?: React.ReactNode;
 }
 
@@ -23,11 +24,17 @@ export function BoardFrame({
 export function BoardHeader({
   width = "100%",
   height = "80px",
+  direction = "column",
   children,
   ...props
 }: BoardProps) {
   return (
-    <Style.BoardHeader width={width} height={height} {...props}>
+    <Style.BoardHeader
+      width={width}
+      height={height}
+      direction={direction}
+      {...props}
+    >
       {children}
     </Style.BoardHeader>
   );
