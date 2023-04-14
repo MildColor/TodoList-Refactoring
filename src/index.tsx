@@ -1,12 +1,9 @@
 "use client";
-import React, { Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ErrorBoundary } from "react-error-boundary";
-import ErrorPage from "./components/common/Exception/ErrorPage";
-import Loader from "./components/common/Loader/Loader";
 import GlobalStyle from "./styles/globalStyle";
 import { Reset } from "styled-reset";
 import { ThemeProvider } from "styled-components";
@@ -32,11 +29,7 @@ root.render(
       <Reset />
       <GlobalStyle />
       <Layout>
-        <ErrorBoundary FallbackComponent={ErrorPage}>
-          <Suspense fallback={<Loader />}>
-            <App />
-          </Suspense>
-        </ErrorBoundary>
+        <App />
       </Layout>
     </ThemeProvider>
   </QueryClientProvider>
