@@ -11,15 +11,13 @@ function TodoList() {
   return (
     <>
       {getTodosDatas?.length === 0 ? (
-        <TodoListSection justifyContent="center">
-          Empty TodoList!
-        </TodoListSection>
+        <TodoListUl justifyContent="center">Empty TodoList!</TodoListUl>
       ) : (
-        <TodoListSection>
+        <TodoListUl>
           {getTodosDatas.map((todo: Todo) => {
             return <TodoLine key={todo.id} todo={todo} />;
           })}
-        </TodoListSection>
+        </TodoListUl>
       )}
     </>
   );
@@ -27,7 +25,7 @@ function TodoList() {
 
 export default TodoList;
 
-const TodoListSection = styled.section<{ justifyContent?: string }>`
+const TodoListUl = styled.ul<{ justifyContent?: string }>`
   ${flexColumn};
   align-items: center;
   justify-content: ${(props) => props.justifyContent || "flex-start"};
