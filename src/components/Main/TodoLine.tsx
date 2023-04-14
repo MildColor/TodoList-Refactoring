@@ -42,7 +42,7 @@ function TodoLine({ todo }: { todo: Todo }) {
   };
 
   return (
-    <StTodoDiv>
+    <StTodoLi>
       {!isEdit ? (
         <Link to={PAGE_PATH.TODO_DETAIL(id)}>
           <StSpan width="120px">{todo.title}</StSpan>
@@ -91,13 +91,13 @@ function TodoLine({ todo }: { todo: Todo }) {
           <FontAwesomeIcon icon={faTimes} />
         )}
       </Button>
-    </StTodoDiv>
+    </StTodoLi>
   );
 }
 
 export default TodoLine;
 
-const StTodoDiv = styled.div`
+const StTodoLi = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
