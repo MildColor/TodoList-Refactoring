@@ -4,7 +4,7 @@ import * as Style from "./Board.styles";
 export interface BoardProps {
   width?: string;
   height?: string;
-  direction?: string;
+  direction?: "column" | "row" | undefined;
   children?: React.ReactNode;
 }
 
@@ -43,11 +43,17 @@ export function BoardHeader({
 export function BoardBody({
   width = "100%",
   height = "620px",
+  direction = "column",
   children,
   ...props
 }: BoardProps) {
   return (
-    <Style.BoardBody width={width} height={height} {...props}>
+    <Style.BoardBody
+      width={width}
+      height={height}
+      direction={direction}
+      {...props}
+    >
       {children}
     </Style.BoardBody>
   );

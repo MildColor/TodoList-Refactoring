@@ -16,6 +16,6 @@ export const Banner = styled.div`
 export const Section = styled.section`
   display: flex;
   position: absolute;
-  width: 600px;
+  width: 1080px;
   top: 100px;
 `;

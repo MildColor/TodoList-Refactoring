@@ -97,10 +97,8 @@ export default SignUpForm;
 const Form = styled.form`
   ${flexColumn};
   justify-content: space-evenly;
-  width: 60%;
-  height: 400px;
-  background-color: white;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 `;

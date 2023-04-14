@@ -46,7 +46,7 @@ function TodoLine({ todo }: { todo: Todo }) {
       {!isEdit ? (
         <>
           <Link to={PAGE_PATH.TODO_DETAIL(id)}>
-            <StSpan width="120px">{todo.title}</StSpan>
+            <StSpan width="100px">{todo.title}</StSpan>
             <StSpan width="350px">{todo.content}</StSpan>
           </Link>
 
@@ -71,7 +71,7 @@ function TodoLine({ todo }: { todo: Todo }) {
               name="title"
               value={title}
               onChange={onChange}
-              width="120px"
+              width="100px"
               height="30px"
             />
             <Input
@@ -111,7 +111,7 @@ const StTodoLi = styled.li`
   justify-content: space-between;
   width: 100%;
   height: 40px;
-  padding: 0 20px;
+  padding: 0 10px;
 `;
 
 const Form = styled.form`

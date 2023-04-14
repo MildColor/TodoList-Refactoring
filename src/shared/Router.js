@@ -24,11 +24,12 @@ function Router() {
               <Route path={PAGE_PATH.SIGN_UP} element={<SignUp />} />
             </Route>
             <Route element={<AuthenticateRoute isAuthenticated={true} />}>
-              <Route path={PAGE_PATH.HOME} element={<Home />} />
-              <Route
-                path={PAGE_PATH.TODO_DETAIL(":id")}
-                element={<TodoDetail />}
-              />
+              <Route path={PAGE_PATH.HOME} element={<Home />}>
+                <Route
+                  path={PAGE_PATH.TODO_DETAIL(":id")}
+                  element={<TodoDetail />}
+                />
+              </Route>
             </Route>
           </Routes>
         </Suspense>

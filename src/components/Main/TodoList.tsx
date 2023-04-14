@@ -29,15 +29,12 @@ const TodoListUl = styled.ul<{ justifyContent?: string }>`
   ${flexColumn};
   align-items: center;
   justify-content: ${(props) => props.justifyContent || "flex-start"};
-  margin: 0 auto;
-  width: 100%;
+  width: 50%;
   height: 590px;
   text-align: center;
-
   overflow-y: auto;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 
   ::-webkit-scrollbar {
     width: 8px;
