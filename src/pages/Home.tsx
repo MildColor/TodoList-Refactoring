@@ -1,5 +1,5 @@
 import Header from "../components/common/Header/Header";
-import CreateTodoForm from "../components/Main/CreateTodoForm";
+import TodoForm from "../components/Main/TodoForm";
 import TodoList from "../components/Main/TodoList";
 import {
   BoardBody,
@@ -14,7 +14,7 @@ function Home() {
         <Header title="TODO" />
       </BoardHeader>
       <BoardBody height="640px">
-        <CreateTodoForm />
+        <TodoForm />
         <TodoList />
       </BoardBody>
     </BoardFrame>

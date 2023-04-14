@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { TODO_ALERTS } from "../../constants/alerts";
 
-function CreateTodoForm() {
+function TodoForm() {
   const [{ title, content }, onChange, setState] = useForm({
     title: "",
     content: "",
@@ -55,7 +55,7 @@ function CreateTodoForm() {
   );
 }
 
-export default CreateTodoForm;
+export default TodoForm;
 
 const Form = styled.form`
   display: flex;
