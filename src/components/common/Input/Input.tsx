@@ -4,11 +4,27 @@ import * as Style from "./Input.styles";
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   width?: string;
   height?: string;
-  children?: React.ReactNode;
+  title?: string;
+  border?: string;
+  errorMessage?: string;
 }
 
-function Input({ ...props }: InputProps) {
+export function Input({ ...props }: InputProps) {
   return <Style.Input {...props} />;
 }
 
-export default Input;
+export function InputField({
+  width,
+  height,
+  title,
+  errorMessage,
+  ...props
+}: InputProps) {
+  return (
+    <Style.InputLayout width={width} height={height}>
+      <Style.InputLabel>{title}</Style.InputLabel>
+      <Style.Input height="60px" {...props} border="2px" />
+      <Style.ErrorMessage>{errorMessage}</Style.ErrorMessage>
+    </Style.InputLayout>
+  );
+}

@@ -3,9 +3,16 @@ import useForm from "../../hooks/common/useForm";
 import { useSignUpMutation } from "../../hooks/queries/auth/useSignUpMutation";
 import { emailValidator, passwordValidator } from "../../utils/validators";
 import useError from "../../hooks/common/useError";
-import Input from "../common/Input/Input";
+import { InputField } from "../common/Input/Input";
+import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { PAGE_PATH } from "../../constants/path";
+import Button from "../common/Button/Button";
+import { flexColumn } from "../../styles/mixins";
 
 function SignUpForm() {
+  const navigate = useNavigate();
+
   const [{ email, password }, onChange] = useForm({
     email: "",
     password: "",
@@ -26,7 +33,6 @@ function SignUpForm() {
       "email",
       isEmailValidity ? "이메일 형식에 맞지 않습니다." : ""
     );
-
     setErrorMessage(
       "password",
       isPasswordValidity ? "비밀번호는 8자 이상 입력해주세요" : ""
@@ -40,31 +46,61 @@ function SignUpForm() {
     formValidator() && mutate({ email, password });
   };
 
+  const goToSignIn = () => {
+    navigate(PAGE_PATH.SIGN_IN);
+  };
+
   return (
-    <div>
-      <form onSubmit={onSubmitHandler}>
-        <label htmlFor="email">이메일</label>
-        <Input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={onChange}
-          autoComplete="on"
-        />
-        <label htmlFor="password">패스워드</label>
-        <Input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onChange={onChange}
-          autoComplete="on"
-        />
-        <button type="submit">회원가입</button>
-      </form>
-    </div>
+    <Form onSubmit={onSubmitHandler}>
+      <InputField
+        title="이메일"
+        // type="email"
+        id="email"
+        name="email"
+        value={email}
+        onChange={onChange}
+        autoComplete="on"
+        width="100%"
+        height="100px"
+        errorMessage={errorMessage.email}
+      />
+      <InputField
+        title="비밀번호"
+        type="password"
+        id="password"
+        name="password"
+        value={password}
+        onChange={onChange}
+        autoComplete="on"
+        width="100%"
+        height="100px"
+        errorMessage={errorMessage.password}
+      />
+      <Button type="submit" width="100%" height="30px" color="secondary">
+        회원가입
+      </Button>
+      <Button
+        type="button"
+        onClick={() => goToSignIn()}
+        width="100%"
+        height="30px"
+        color="secondary"
+      >
+        로그인
+      </Button>
+    </Form>
   );
 }
 
 export default SignUpForm;
+
+const Form = styled.form`
+  ${flexColumn};
+  justify-content: space-evenly;
+  width: 60%;
+  height: 400px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+`;

@@ -4,7 +4,9 @@ import { authApis } from "../../../api/auth";
 import { PAGE_PATH } from "../../../constants/path";
 import { SignInForm } from "../../../types/signIn";
 import { setLocalStorage } from "../../../utils/localStorage";
-import { onErrorType } from "../../../types/error";
+import { onErrorType } from "../../../types/custom";
+import { ACCESS_TOKEN_KEY } from "../../../constants/token";
+import { TODO_ALERTS } from "../../../constants/alerts";
 
 export const useSignInMutation = () => {
   const navigate = useNavigate();
@@ -13,14 +15,16 @@ export const useSignInMutation = () => {
     mutationFn: async (payload: SignInForm) => {
       return await authApis.signIn(payload);
     },
+
     onSuccess: (data, variables, context) => {
       const { token } = data.data;
-      setLocalStorage("accessToken", token);
+      setLocalStorage(ACCESS_TOKEN_KEY, token);
       navigate(PAGE_PATH.HOME);
     },
+
     onError: (error: onErrorType) => {
       const { status } = error.response;
-      if (status === 400) return alert("로그인에 실패했습니다.");
+      if (status === 400) return alert(TODO_ALERTS.FAIL_LOGIN);
     },
   });
 };

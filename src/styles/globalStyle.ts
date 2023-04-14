@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
     }
 
-    * {
+    *{ 
         box-sizing: border-box;
         font-family: "Pretendard-Regular", sans-serif;
     }  
@@ -31,10 +31,10 @@ const GlobalStyle = createGlobalStyle`
         color:inherit;
     }
 
+    
 
 
-  
-  
+
 `;
 
 export default GlobalStyle;
