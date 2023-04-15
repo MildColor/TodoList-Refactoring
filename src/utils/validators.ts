@@ -1,6 +1,6 @@
 export const emailValidator = (email: string) => {
-  const rule = new RegExp("!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,5}$");
-  const result = rule.test(email.trim());
+  const rule = new RegExp(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/);
+  const result = !rule.test(email.trim());
   return result;
 };
 

@@ -4,12 +4,13 @@ import * as Style from "./Board.styles";
 export interface BoardProps {
   width?: string;
   height?: string;
+  direction?: "column" | "row" | undefined;
   children?: React.ReactNode;
 }
 
 export function BoardFrame({
   width = "100%",
-  height = "700px",
+  height = "70rem",
   children,
   ...props
 }: BoardProps) {
@@ -22,12 +23,18 @@ export function BoardFrame({
 
 export function BoardHeader({
   width = "100%",
-  height = "80px",
+  height = "80rem",
+  direction = "column",
   children,
   ...props
 }: BoardProps) {
   return (
-    <Style.BoardHeader width={width} height={height} {...props}>
+    <Style.BoardHeader
+      width={width}
+      height={height}
+      direction={direction}
+      {...props}
+    >
       {children}
     </Style.BoardHeader>
   );
@@ -35,12 +42,18 @@ export function BoardHeader({
 
 export function BoardBody({
   width = "100%",
-  height = "620px",
+  height = "62rem",
+  direction = "column",
   children,
   ...props
 }: BoardProps) {
   return (
-    <Style.BoardBody width={width} height={height} {...props}>
+    <Style.BoardBody
+      width={width}
+      height={height}
+      direction={direction}
+      {...props}
+    >
       {children}
     </Style.BoardBody>
   );

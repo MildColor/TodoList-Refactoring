@@ -36,7 +36,7 @@ function TodoForm() {
         value={title}
         onChange={onChange}
         width="20%"
-        height="30px"
+        height="3rem"
       />
       <Input
         type="text"
@@ -46,9 +46,9 @@ function TodoForm() {
         value={content}
         onChange={onChange}
         width="65%"
-        height="30px"
+        height="3rem"
       />
-      <Button type="submit" width="30px" height="30px">
+      <Button type="submit" width="3rem" height="3rem">
         <FontAwesomeIcon icon={faPlus} size="lg" style={{ color: "#a6c1ee" }} />
       </Button>
     </Form>
@@ -62,6 +62,5 @@ const Form = styled.form`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 30px;
-  margin-bottom: 20px;
+  height: 3rem;
 `;

@@ -9,8 +9,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 function Button({
-  width = "30px",
-  height = "30px",
+  width = "3rem",
+  height = "3rem",
   color = "primary",
   children,
   ...props

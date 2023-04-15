@@ -9,24 +9,32 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
     }
 
-    *{ 
+
+    html{
+        font-size: 62.5%;
+        /** rem (1rem = 10px) */
+    }
+
+
+    * { 
         box-sizing: border-box;
         font-family: "Pretendard-Regular", sans-serif;
     }  
     
-    body{
+    body {
         box-sizing: border-box;
         font-family: "Pretendard-Regular", sans-serif;
+        font-size: 1.6rem;
     }
 
-    button{
+    button {
         border: none;
         background: none;
         padding: 0;
         cursor: pointer;
     }
  
-    a{
+    a {
         text-decoration: none;
         color:inherit;
     }

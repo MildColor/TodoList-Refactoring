@@ -41,7 +41,7 @@ function LoginForm() {
         onChange={onChange}
         autoComplete="on"
         width="100%"
-        height="100px"
+        height="10rem"
         errorMessage={errorMessage.email}
       />
       <InputField
@@ -53,18 +53,18 @@ function LoginForm() {
         onChange={onChange}
         autoComplete="on"
         width="100%"
-        height="100px"
+        height="10rem"
         errorMessage={errorMessage.password}
       />
 
-      <Button type="submit" width="100%" height="30px" color="secondary">
+      <Button type="submit" width="100%" height="3rem" color="secondary">
         로그인
       </Button>
       <Button
         type="button"
         onClick={() => goToSignUp()}
         width="100%"
-        height="30px"
+        height="3rem"
         color="secondary"
       >
         회원가입
@@ -78,10 +78,7 @@ export default LoginForm;
 const Form = styled.form`
   ${flexColumn};
   justify-content: space-evenly;
-  width: 60%;
-  height: 400px;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
 `;

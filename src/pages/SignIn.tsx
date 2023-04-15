@@ -10,10 +10,10 @@ import Header from "../components/common/Header/Header";
 function SignIn() {
   return (
     <BoardFrame>
-      <BoardHeader>
+      <BoardHeader width="40rem">
         <Header title="SignIn" />
       </BoardHeader>
-      <BoardBody>
+      <BoardBody width="40rem" height="500rem">
         <LoginForm />
       </BoardBody>
     </BoardFrame>

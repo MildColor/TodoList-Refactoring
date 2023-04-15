@@ -1,47 +1,22 @@
-import { useNavigate, useParams } from "react-router-dom";
+import React from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import Header from "../components/common/Header/Header";
 import { useGetTodoById } from "../hooks/queries/todo/useGetTodoById";
-import {
-  BoardBody,
-  BoardFrame,
-  BoardHeader,
-} from "../components/common/Board/Board";
-import Button from "../components/common/Button/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLongArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { flexColumn } from "../styles/mixins";
 
 function TodoDetail() {
-  const navigate = useNavigate();
   const { id } = useParams();
-
+  console.log(id);
   const { data: getTodoByIdData } = useGetTodoById(id);
   const { title, content, createdAt, updatedAt } = getTodoByIdData;
 
   return (
-    <BoardFrame height="720px">
-      <BoardHeader>
-        <Header title="Detail" />
-      </BoardHeader>
-      <BoardBody height="640px">
-        <DetailContainer>
-          <h1>Title: {title}</h1>
-          <p>Content: {content}</p>
-          <p>
-            createdAt:
-            {createdAt.slice(0, 10) + " " + createdAt.slice(11, 19)}
-          </p>
-          <p>
-            updatedAt:
-            {updatedAt.slice(0, 10) + " " + updatedAt.slice(11, 19)}
-          </p>
-        </DetailContainer>
-        <Button onClick={() => navigate(-1)}>
-          <FontAwesomeIcon icon={faLongArrowLeft} />
-        </Button>
-      </BoardBody>
-    </BoardFrame>
+    <DetailContainer>
+      <h1>{title}</h1>
+      <p>{content}</p>
+      <p>createdAt: {createdAt.slice(0, 10) + " " + createdAt.slice(11, 19)}</p>
+      <p>updatedAt: {updatedAt.slice(0, 10) + " " + updatedAt.slice(11, 19)}</p>
+    </DetailContainer>
   );
 }
 
@@ -49,24 +24,27 @@ export default TodoDetail;
 
 const DetailContainer = styled.div`
   ${flexColumn}
-  justify-content: space-between;
-  width: 100%;
-  height: 300px;
-  padding: 50px;
-  border-radius: 5px;
-  margin: 30px 0;
-  background-color: white;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  justify-content: space-evenly;
+  width: 54rem;
+  height: 100%;
+  padding: 2rem;
 
   h1 {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+
+  p:nth-child(2) {
+    height: 46rem;
   }
 
   * {
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
     word-break: break-all;
   }
 `;

@@ -9,7 +9,7 @@ import ErrorPage from "../components/common/Exception/ErrorPage";
 const NotFound = lazy(() => import("../pages/NotFound"));
 const SignIn = lazy(() => import("../pages/SignIn"));
 const SignUp = lazy(() => import("../pages/SignUp"));
-const Home = lazy(() => import("../pages/Home"));
+const Main = lazy(() => import("../pages/Main"));
 const TodoDetail = lazy(() => import("../pages/TodoDetail"));
 
 function Router() {
@@ -24,11 +24,12 @@ function Router() {
               <Route path={PAGE_PATH.SIGN_UP} element={<SignUp />} />
             </Route>
             <Route element={<AuthenticateRoute isAuthenticated={true} />}>
-              <Route path={PAGE_PATH.HOME} element={<Home />} />
-              <Route
-                path={PAGE_PATH.TODO_DETAIL(":id")}
-                element={<TodoDetail />}
-              />
+              <Route path={PAGE_PATH.HOME} element={<Main />}>
+                <Route
+                  path={PAGE_PATH.TODO_DETAIL(":id")}
+                  element={<TodoDetail />}
+                />
+              </Route>
             </Route>
           </Routes>
         </Suspense>

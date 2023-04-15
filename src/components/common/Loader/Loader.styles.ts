@@ -5,7 +5,7 @@ export const LoadingMessageField = styled.div`
   text-align: center;
 
   span {
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: 600;
     color: white;
   }
