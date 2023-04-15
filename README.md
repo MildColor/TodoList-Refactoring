@@ -1,14 +1,15 @@
 # 프로젝트 소개
 - 원티드 프리온보딩 FE 챌린지의 과제
 - 개인사로 인해 해당 강의 수강당시에 Refactoring 할 수 없어서 늦게 수행 
-- 기존 과제에서 수강내용을 바탕으로 Refactoring
-- 
+- 기존 과제에서 강의자료를 바탕으로 Refactoring
 
+<br/>
 
 ## :memo: 노션 페이지
-꼭 확인해주세요!
+꼭 확인해주세요!<br/>
 https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f845be04b36?pvs=4
 
+<br/>
 
 ## 설치 및 실행방법
 ```
@@ -27,9 +28,19 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
   
 ### Todo List 페이지
 
+- Todo List API를 호출하여 Todo List CRUD 기능을 구현해주세요
+  - [x] 목록 / 상세 영역으로 나누어 구현해주세요
+  - [x] Todo 목록을 볼 수 있습니다.
+  - [x] Todo 추가 버튼을 클릭하면 할 일이 추가 됩니다.
+  - [x] Todo 수정 버튼을 클릭하면 수정 모드를 활성화하고, 수정 내용을 제출하거나 취소할 수 있습니다.
+  - [x] Todo 삭제 버튼을 클릭하면 해당 Todo를 삭제할 수 있습니다.
+- 한 화면 내에서 Todo List와 개별 Todo의 상세를 확인할 수 있도록 해주세요.
+  - [x] 새로고침을 했을 때 현재 상태가 유지되어야 합니다.
+  - [x] 개별 Todo를 조회 순서에 따라 페이지 뒤로가기를 통하여 조회할 수 있도록 해주세요.
+- 한 페이지 내에서 새로고침 없이 데이터가 정합성을 갖추도록 구현해주세요
+  - [x] 수정되는 Todo의 내용이 목록에서도 실시간으로 반영되어야 합니다
 
-
-
+<br/>
 
 ## :pushpin: 기술 스택
 
@@ -38,7 +49,6 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
 <img src="https://img.shields.io/badge/styled-component-DB7093?style=for-the-badge&logo=styled-component&logoColor=white">
 <img src="https://img.shields.io/badge/react-query-FF4154?style=for-the-badge&logo=react-query&logoColor=white">
-<img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white">
 </div>
 <br/>
 
@@ -51,7 +61,7 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 
 - styled-components
 
-  - CSS in JS로 선언적인 프
+  - CSS in JS로 선언적인 프 
 
 
 - typescript
@@ -59,9 +69,7 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
   - 컴파일시 발생할 수 있는 오류를 발견 가능하여 안전하다.
   - IDE에 타입 힌트, 추론을 줌으로써 자동완성 기능을 통해 개발자의 생산성을 높여준다.
   
-  
-
-
+<br/>
 
 ## :sparkles: 개발기간
 
@@ -81,7 +89,7 @@ https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f
 ```tsx
 
 src
- ┣ api // api 설정 및 분리 
+ ┣ api // api 설정 및 분리를 위한 폴더 
  ┣ components // 컴포넌트 폴더 
  ┃ ┣ common // 공통 사용 컴포넌트
  ┃ ┣ Header
@@ -96,7 +104,7 @@ src
  ┃ ┣ common // 공통 사용 hooks
  ┃ ┗ queries // react-query custom hooks
  ┣ pages // 페이지별 컴포넌트 집합
- ┣ shared 
+ ┣ shared // Router 폴더 
  ┣ styles // 스타일 설정 폴더
  ┣ types // 타입 선언 폴더 
  ┣ utils // 편의용 함수 폴더
