@@ -30,20 +30,20 @@ const TodoListUl = styled.ul<{ justifyContent?: string }>`
   align-items: center;
   justify-content: ${(props) => props.justifyContent || "flex-start"};
   width: 50%;
-  height: 590px;
+  height: 59rem;
   text-align: center;
   overflow-y: auto;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 0.5rem;
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 0.8rem;
   }
   ::-webkit-scrollbar-thumb {
     height: 30%; /* 스크롤바의 길이 */
     background-image: ${({ theme }) =>
       theme.gradients.RainyAshville}; /* 스크롤바의 색상 */
-    border-radius: 10px;
+    border-radius: 1rem;
   }
 
   ::-webkit-scrollbar-track {

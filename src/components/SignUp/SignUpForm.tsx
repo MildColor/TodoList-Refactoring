@@ -61,7 +61,7 @@ function SignUpForm() {
         onChange={onChange}
         autoComplete="on"
         width="100%"
-        height="100px"
+        height="10rem"
         errorMessage={errorMessage.email}
       />
       <InputField
@@ -73,17 +73,17 @@ function SignUpForm() {
         onChange={onChange}
         autoComplete="on"
         width="100%"
-        height="100px"
+        height="10rem"
         errorMessage={errorMessage.password}
       />
-      <Button type="submit" width="100%" height="30px" color="secondary">
+      <Button type="submit" width="100%" height="3rem" color="secondary">
         회원가입
       </Button>
       <Button
         type="button"
         onClick={() => goToSignIn()}
         width="100%"
-        height="30px"
+        height="3rem"
         color="secondary"
       >
         로그인
@@ -99,6 +99,6 @@ const Form = styled.form`
   justify-content: space-evenly;
   width: 100%;
   height: 100%;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 0.5rem;
+  padding: 1rem;
 `;

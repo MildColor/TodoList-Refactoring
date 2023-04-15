@@ -12,12 +12,12 @@ import VerticalLine from "../components/common/VerticalLine/VerticalLine";
 
 function Main() {
   return (
-    <BoardFrame height="720px">
-      <BoardHeader height="120px">
+    <BoardFrame height="72rem">
+      <BoardHeader height="12rem">
         <Header title="TODO" />
         <TodoForm />
       </BoardHeader>
-      <BoardBody height="600px" direction="row">
+      <BoardBody height="60rem" direction="row">
         <TodoList />
         <VerticalLine />
         <Suspense fallback={<div>Loading....</div>}>

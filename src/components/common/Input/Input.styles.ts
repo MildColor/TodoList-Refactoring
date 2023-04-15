@@ -5,10 +5,10 @@ import { flexColumn } from "../../../styles/mixins";
 export const Input = styled.input<InputProps>`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  padding: 0 10px;
-  border-radius: 5px;
-  border: ${(props) => `${props.border ?? "0px"} solid gray`};
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  border: ${(props) => `${props.border ?? "0rem"} solid gray`};
+  box-shadow: 0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
   border: 0;
   outline: 0;
 `;
@@ -22,13 +22,13 @@ export const InputLayout = styled.div<InputProps>`
 
 export const InputLabel = styled.label<InputProps>`
   width: 100%;
-  height: 25px;
-  line-height: 25px;
+  height: 2.5rem;
+  line-height: 2.5rem;
 `;
 
 export const ErrorMessage = styled.span<InputProps>`
   width: 100%;
-  height: 15px;
-  line-height: 15px;
+  height: 1.5rem;
+  line-height: 1.5rem;
   color: ${(props) => props.theme.colors.red[0]};
 `;

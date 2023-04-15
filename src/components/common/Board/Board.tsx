@@ -10,7 +10,7 @@ export interface BoardProps {
 
 export function BoardFrame({
   width = "100%",
-  height = "700px",
+  height = "70rem",
   children,
   ...props
 }: BoardProps) {
@@ -23,7 +23,7 @@ export function BoardFrame({
 
 export function BoardHeader({
   width = "100%",
-  height = "80px",
+  height = "80rem",
   direction = "column",
   children,
   ...props
@@ -42,7 +42,7 @@ export function BoardHeader({
 
 export function BoardBody({
   width = "100%",
-  height = "620px",
+  height = "62rem",
   direction = "column",
   children,
   ...props

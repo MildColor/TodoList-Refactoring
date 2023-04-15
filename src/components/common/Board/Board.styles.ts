@@ -6,7 +6,7 @@ export const BoardFrame = styled.div<BoardProps>`
   ${flexColumn};
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  border-radius: 5px;
+  border-radius: 0.5rem;
 `;
 export const BoardHeader = styled.div<BoardProps>`
   ${({ direction }) => (direction === "column" ? flexColumn : flexRow)};
@@ -35,7 +35,7 @@ export const BoardBody = styled.div<BoardProps>`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   margin: 0 auto;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
   background-color: white;
-  border-radius: 10px;
+  border-radius: 1rem;
 `;

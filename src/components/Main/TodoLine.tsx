@@ -46,8 +46,8 @@ function TodoLine({ todo }: { todo: Todo }) {
       {!isEdit ? (
         <>
           <Link to={PAGE_PATH.TODO_DETAIL(id)}>
-            <StSpan width="100px">{todo.title}</StSpan>
-            <StSpan width="350px">{todo.content}</StSpan>
+            <StSpan width="10rem">{todo.title}</StSpan>
+            <StSpan width="35rem">{todo.content}</StSpan>
           </Link>
 
           <Button type="button" onClick={deleteHandler}>
@@ -56,8 +56,8 @@ function TodoLine({ todo }: { todo: Todo }) {
           <Button
             type="button"
             onClick={() => setIsEdit(!isEdit)}
-            width="30px"
-            height="30px"
+            width="3rem"
+            height="3rem"
           >
             <FontAwesomeIcon icon={faEdit} />
           </Button>
@@ -71,8 +71,8 @@ function TodoLine({ todo }: { todo: Todo }) {
               name="title"
               value={title}
               onChange={onChange}
-              width="100px"
-              height="30px"
+              width="10rem"
+              height="3rem"
             />
             <Input
               type="content"
@@ -80,8 +80,8 @@ function TodoLine({ todo }: { todo: Todo }) {
               name="content"
               value={content}
               onChange={onChange}
-              width="350px"
-              height="30px"
+              width="35rem"
+              height="3rem"
             />
           </Form>
 
@@ -92,8 +92,8 @@ function TodoLine({ todo }: { todo: Todo }) {
           <Button
             type="button"
             onClick={() => setIsEdit(!isEdit)}
-            width="30px"
-            height="30px"
+            width="3rem"
+            height="3rem"
           >
             <FontAwesomeIcon icon={faTimes} />
           </Button>
@@ -110,8 +110,8 @@ const StTodoLi = styled.li`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 40px;
-  padding: 0 10px;
+  height: 4rem;
+  padding: 0 1rem;
 `;
 
 const Form = styled.form`
@@ -121,10 +121,10 @@ const Form = styled.form`
 
 const StSpan = styled.span<{ width?: string }>`
   display: inline-block;
-  height: 30px;
+  height: 3rem;
   width: ${(props) => props.width};
   text-align: start;
-  line-height: 30px;
+  line-height: 3rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

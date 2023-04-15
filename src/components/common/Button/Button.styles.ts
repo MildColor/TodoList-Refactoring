@@ -12,7 +12,7 @@ export const Button = styled.button<ButtonProps>`
     };
     return colors[color ?? "primary"];
   }};
-  border-radius: 5px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
   text-align: center;
 `;

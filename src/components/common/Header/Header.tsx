@@ -23,7 +23,7 @@ function Header({ title }: { title: string }) {
     <Style.Container>
       <Style.Title>{title}</Style.Title>
       {token ? (
-        <Button onClick={logoutHandler} width="50px">
+        <Button onClick={logoutHandler} width="5rem">
           로그아웃
         </Button>
       ) : (

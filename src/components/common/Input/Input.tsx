@@ -23,7 +23,7 @@ export function InputField({
   return (
     <Style.InputLayout width={width} height={height}>
       <Style.InputLabel>{title}</Style.InputLabel>
-      <Style.Input height="60px" {...props} border="2px" />
+      <Style.Input height="6rem" {...props} border="0.2rem" />
       <Style.ErrorMessage>{errorMessage}</Style.ErrorMessage>
     </Style.InputLayout>
   );

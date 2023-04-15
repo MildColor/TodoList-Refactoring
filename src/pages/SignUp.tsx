@@ -9,10 +9,10 @@ import {
 function SignUp() {
   return (
     <BoardFrame>
-      <BoardHeader width="400px">
+      <BoardHeader width="40rem">
         <Header title="SignUp" />
       </BoardHeader>
-      <BoardBody width="400px" height="500px">
+      <BoardBody width="40rem" height="500rem">
         <SignUpForm />
       </BoardBody>
     </BoardFrame>

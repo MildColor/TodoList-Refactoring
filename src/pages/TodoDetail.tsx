@@ -25,21 +25,21 @@ export default TodoDetail;
 const DetailContainer = styled.div`
   ${flexColumn}
   justify-content: space-evenly;
-  width: 540px;
+  width: 54rem;
   height: 100%;
-  padding: 20px;
+  padding: 2rem;
 
   h1 {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
   }
   p {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
   }
 
   p:nth-child(2) {
-    height: 460px;
+    height: 46rem;
   }
 
   * {

@@ -8,7 +8,7 @@ export const Layout = styled.div`
 
 export const Banner = styled.div`
   display: flex;
-  height: 300px;
+  height: 30rem;
   width: 100%;
   background-image: ${({ theme }) => theme.gradients.AmyCrisp};
 `;
@@ -16,6 +16,6 @@ export const Banner = styled.div`
 export const Section = styled.section`
   display: flex;
   position: absolute;
-  width: 1080px;
-  top: 100px;
+  width: 108rem;
+  top: 10rem;
 `;
