@@ -8,9 +8,9 @@ import {
   BoardHeader,
 } from "../components/common/Board/Board";
 import { Outlet } from "react-router";
-import styled from "styled-components";
+import VerticalLine from "../components/common/VerticalLine/VerticalLine";
 
-function Home() {
+function Main() {
   return (
     <BoardFrame height="720px">
       <BoardHeader height="120px">
@@ -28,10 +28,4 @@ function Home() {
   );
 }
 
-export default Home;
-
-const VerticalLine = styled.div`
-  width: 3px;
-  height: 100%;
-  background-image: ${({ theme }) => theme.gradients.RainyAshville};
-`;
+export default Main;
