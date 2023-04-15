@@ -121,7 +121,7 @@ src
 ### 게시글 작성
 
 
-<img width=600px src=/>
+<img width=600px src=![KakaoTalk_20230415_191436813](https://user-images.githubusercontent.com/96479626/232207825-886f9072-abae-45bb-ac04-0503a7b8d7e7.gif)/>
 
 <br/>
 
