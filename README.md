@@ -93,11 +93,11 @@ src
  ┣ components // 컴포넌트 폴더 
  ┃ ┣ common // 공통 사용 컴포넌트
  ┃ ┣ Header
- ┃ ┣ HOC 
+ ┃ ┣ HOC // 고차컴포넌트 폴더
  ┃ ┣ Layout
- ┃ ┣ Main
- ┃ ┣ SignIn
- ┃ ┗ SignUp
+ ┃ ┣ Main // 페이지 별 컴포넌트 분류
+ ┃ ┣ SignIn // 페이지 별 컴포넌트 분류
+ ┃ ┗ SignUp // 페이지 별 컴포넌트 분류
  ┣ constants // 리터럴값을 관리하기 위한 폴더  
  ┣ hooks // custom hooks 폴더
  ┃ ┣ auth // signIn, signUp 관련 hooks 
