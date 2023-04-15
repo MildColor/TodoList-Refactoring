@@ -152,5 +152,5 @@ src
 <br/>
 
 
-## 고민한 부분 & 진행 
+## 고민한 부분 & 진행과정
 https://www.notion.so/TodoList-Refactoring-TS-React-Query-ff026a9688814aa99f366f845be04b36?pvs=4
